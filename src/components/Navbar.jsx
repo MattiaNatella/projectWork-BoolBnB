@@ -12,9 +12,7 @@ const Navbar = () => {
               className="d-inline-block align-text-top imgLogo"
             />
           </a>
-          <a href="/nuovo-immobile" className="text-dark bg-success">
-            Aggiungi un immobile
-          </a>
+          <button type="button" className="btn btn-info">Aggiungi Immobile</button>
         </div>
       </nav>
     </div>
