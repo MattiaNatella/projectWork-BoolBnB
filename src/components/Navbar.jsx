@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div>
@@ -12,7 +14,9 @@ const Navbar = () => {
               className="d-inline-block align-text-top imgLogo"
             />
           </a>
-          <button type="button" className="btn btn-info">Aggiungi Immobile</button>
+          <Link to={"/nuovo-immobile"} type="button" className="btn btn-info">
+            Aggiungi Immobile
+          </Link>
         </div>
       </nav>
     </div>
