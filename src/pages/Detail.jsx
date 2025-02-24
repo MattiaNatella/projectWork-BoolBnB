@@ -10,7 +10,7 @@ const Detail = () => {
   return (
     <>
       <div className="container">
-        <h3 className="mt-5">{immobile.descrizione_immobile}</h3>
+        <h3 className="mt-5">{immobile?.descrizione_immobile}</h3>
         <img
           className="w-100 py-3"
           src="https://placehold.co/600x400/EEE/31343C"
@@ -18,11 +18,11 @@ const Detail = () => {
         />
 
         <div className="details my-3">
-          <p>Descrizione: {immobile.descrizione_immobile}</p>
-          <p>Metri Quadrati: {immobile.metri_quadrati}</p>
-          <p>Indirizzo: {immobile.indirizzo}</p>
-          <p>Stanze: {immobile.stanze}</p>
-          <p>Bagni: {immobile.bagni}</p>
+          <p>Descrizione: {immobile?.descrizione_immobile}</p>
+          <p>Metri Quadrati: {immobile?.metri_quadrati}</p>
+          <p>Indirizzo: {immobile?.indirizzo}</p>
+          <p>Stanze: {immobile?.stanze}</p>
+          <p>Bagni: {immobile?.bagni}</p>
         </div>
 
         <div className="recensioni mt-5">
