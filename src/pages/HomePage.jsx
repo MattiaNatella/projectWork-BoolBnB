@@ -2,6 +2,7 @@ import Hearts from "../components/Hearts";
 import { useGlobalContext } from "../context/GlobalContext";
 import { useEffect } from "react";
 import Card from "../components/Card";
+import Searchbar from "../components/Searchbar";
 
 const HomePage = () => {
 
@@ -12,6 +13,9 @@ const HomePage = () => {
   return (
     <div>
       <div className="conatiner"> 
+        <div className="d-flex justify-content-center">
+          <Searchbar />
+        </div>
         <div className="d-flex flex-wrap justify-content-center">        
           {immobili.map((immobile) => (
             <div className="col-md-4 m-2" key={immobile.id}>
