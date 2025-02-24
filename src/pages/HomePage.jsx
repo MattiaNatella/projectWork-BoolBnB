@@ -11,12 +11,14 @@ const HomePage = () => {
 
   return (
     <div>
-      <div className="conatiner">        
-        {immobili.map((immobile) => (
-          <div className="col-md-4" key={immobile.id}>
-            <Card immobile={immobile} />
-          </div>
-        ))}
+      <div className="conatiner"> 
+        <div className="d-flex flex-wrap justify-content-center">        
+          {immobili.map((immobile) => (
+            <div className="col-md-4 m-2" key={immobile.id}>
+              <Card immobile={immobile} />
+            </div>
+          ))}
+        </div>       
       </div>
       <Hearts />
     </div>
