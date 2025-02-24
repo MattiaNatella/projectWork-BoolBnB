@@ -2,7 +2,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className="navbar">
-        <div className="container-fluid">
+        <div className="container-fluid bg-black">
           <a className="navbar-brand" href="/">
             <img
               src="https://img.freepik.com/vettori-premium/eccezionale-monogramma-bn-o-bnb-o-nb-lettere-logo-design_873531-453.jpg?w=996"
