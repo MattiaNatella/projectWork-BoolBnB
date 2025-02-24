@@ -37,6 +37,7 @@ const NewHouse = () => {
             type="text"
             className="form-control"
             name="descrizione_immobile"
+            placeholder="Inserisci il nome dell'annuncio"
             value={formData.descrizione_immobile}
             onChange={hadleSetValue}
           />
@@ -47,6 +48,7 @@ const NewHouse = () => {
             type="number"
             className="form-control"
             name="stanze"
+            placeholder="Inserisci il numero di stanze"
             value={formData.stanze}
             onChange={hadleSetValue}
           />
@@ -57,6 +59,7 @@ const NewHouse = () => {
             type="number"
             className="form-control"
             name="bagni"
+            placeholder="Inserisci il numero di bagni"
             value={formData.bagni}
             onChange={hadleSetValue}
           />
@@ -67,6 +70,7 @@ const NewHouse = () => {
             type="number"
             className="form-control"
             name="letti"
+            placeholder="Inserisci il numero di letti"
             value={formData.letti}
             onChange={hadleSetValue}
           />
@@ -77,6 +81,7 @@ const NewHouse = () => {
             type="number"
             className="form-control"
             name="metri_quadrati"
+            placeholder="Inserisci i metri quadrati"
             value={formData.metri_quadrati}
             onChange={hadleSetValue}
           />
@@ -87,6 +92,7 @@ const NewHouse = () => {
             type="text"
             className="form-control"
             name="indirizzo"
+            placeholder="Inserisci l'indirizzo dell'immobile"
             value={formData.indirizzo}
             onChange={hadleSetValue}
           />
