@@ -14,7 +14,7 @@ const App = () => {
         <Routes>
           <Route Component={DefaultLayout}>
             <Route path="/" Component={HomePage} />
-            <Route path="/dettaglio-immobile:id" Component={Detail} />
+            <Route path="/dettaglio-immobile/:id" Component={Detail} />
             <Route path="/nuovo-immobile" Component={NewHouse} />
             <Route path="/ricerca-avanzata" Component={Search} />
             <Route path="/*" Component={NotFound404} />
