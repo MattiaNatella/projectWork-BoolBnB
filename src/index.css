@@ -1,3 +1,11 @@
 header a {
   text-decoration: none;
 }
+
+header{
+  background-color: navy;
+}
+
+.imgLogo{
+  border-radius: 15px;
+}
