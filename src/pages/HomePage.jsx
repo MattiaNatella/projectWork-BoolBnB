@@ -11,7 +11,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <div className="conatiner">
+      <div className="conatiner">        
         {(immobili.map((immobile) => {(
             <div className="col-md-4" key={immobile.id}>
               <Card immobile={immobile} />
