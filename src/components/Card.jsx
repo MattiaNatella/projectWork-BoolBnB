@@ -12,6 +12,7 @@ const Card = ({ immobile }) => {
         <div className="card-body">
           <h5 className="card-title">{immobile.descrizione_immobile}</h5>
           <p className="card-text">Stanze: {immobile.stanze}</p>
+          <p className="card-text">Bagni: {immobile.bagni}</p>
           <div>
             <Link
               to={`/dettaglio-immobile/${immobile.id}`}
