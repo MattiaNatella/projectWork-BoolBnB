@@ -6,7 +6,7 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
   const api_url = import.meta.env.VITE_API_URL;
   const api_url_filter = import.meta.env.VITE_API_URL_FILTERED;
-  const api_url_tipologie = import.meta.env.VITE_API_URL_TIPOLOGIE;
+  const api_url_tipologie = import.meta.env.VITE_API_URL_TIPOLOGIE;  
 
   const [immobili, setImmobili] = useState([]);
   const [immobile, setImmobile] = useState(null);
@@ -45,6 +45,9 @@ const GlobalProvider = ({ children }) => {
     axios.get(api_url_tipologie)
     .then((res) =>{
       setTipologie(res.data)
+      
+      console.log(res.data);
+      
     }) 
     .catch((err) => console.log(err));
   }
