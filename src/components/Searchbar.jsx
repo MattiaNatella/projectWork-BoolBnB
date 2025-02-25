@@ -16,9 +16,6 @@ const Searchbar = () => {
         />
       </div>
       <div>
-        {/* <button type="submit" className="btn btn-primary ms-2">
-          Ricerca
-        </button> */}
         <Link to={"/ricerca-avanzata"} className="btn btn-primary ms-2">
           Ricerca Avanzata
         </Link>
