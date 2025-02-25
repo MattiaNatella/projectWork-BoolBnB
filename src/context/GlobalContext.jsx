@@ -45,9 +45,6 @@ const GlobalProvider = ({ children }) => {
     axios.get(api_url_tipologie)
     .then((res) =>{
       setTipologie(res.data)
-      
-      console.log(res.data);
-      
     }) 
     .catch((err) => console.log(err));
   }
@@ -68,9 +65,9 @@ const GlobalProvider = ({ children }) => {
   const handleAdvancedSearch = ({stanze, bagni, tipologia}) =>{
     
     const matchFilter = immobili.filter(immobile =>{
-      const matchesStanze = stanze ? immobile.stanze === stanze : true;
-      const matchesBagni = bagni ? immobile.bagni === bagni : true;
-      const matchesTipologia = tipologia ? immobile.tipologia.toLowerCase().includes(tipologia.toLowerCase()) : true;
+      const matchesStanze = stanze ? immobile.stanze == stanze : true;
+      const matchesBagni = bagni ? immobile.bagni == bagni : true;
+      const matchesTipologia = tipologia ? tipologia.toLowerCase().includes(tipologia.toLowerCase()) : true;
       return matchesStanze && matchesBagni && matchesTipologia;
     })
       setFilteredImmobili(matchFilter)      
