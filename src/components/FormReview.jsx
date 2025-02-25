@@ -53,7 +53,7 @@ const FormReview = ({ handleClose }) => {
             name="valutazione"
             min={1}
             max={5}
-            placeholder="Inserisci il numero di bagni"
+            placeholder="Inserisci il numero di cuoricini"
             value={formReview.valutazione}
             onChange={hadleSetValue}
           />
@@ -64,7 +64,7 @@ const FormReview = ({ handleClose }) => {
             type="number"
             className="form-control"
             name="gg_permanenza"
-            placeholder="Inserisci il numero di bagni"
+            placeholder="Inserisci il numero di giorni in cui sei stato ospite"
             value={formReview.gg_permanenza}
             onChange={hadleSetValue}
           />
