@@ -6,14 +6,15 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
   const api_url = import.meta.env.VITE_API_URL;
   const api_url_filter = import.meta.env.VITE_API_URL_FILTERED;
-  const api_url_tipologie = import.meta.env.VITE_API_URL_TIPOLOGIE;  
+  const api_url_tipologie = import.meta.env.VITE_API_URL_TIPOLOGIE;
 
   const [immobili, setImmobili] = useState([]);
   const [immobile, setImmobile] = useState(null);
-  const [tipologie, setTipologie] = useState([])
-  const [filteredImmobili, setFilteredImmobili] = useState([])
-  const [searchTerm, setSearchTerm] = useState('')
+  const [tipologie, setTipologie] = useState([]);
+  const [filteredImmobili, setFilteredImmobili] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
+  //INDEX immobili
   const fetchImmobili = () => {
     axios
       .get(api_url)
@@ -23,6 +24,7 @@ const GlobalProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
+  //SINGOLO immobile
   const fetchImmobile = (id) => {
     axios
       .get(`${api_url}/${id}`)
@@ -32,49 +34,49 @@ const GlobalProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
+  //chiamata indirizzi filtrati homepage
   const fetchFilteredImmobili = (searchTerm) => {
     axios
       .get(`${api_url_filter}indirizzo=${searchTerm}`)
       .then((res) => {
-        setFilteredImmobili(res.data);        
+        setFilteredImmobili(res.data);
       })
       .catch((err) => console.log(err));
   };
 
-  const fetchTipologie = () =>{
-    axios.get(api_url_tipologie)
-    .then((res) =>{
-      setTipologie(res.data)
-      
-      console.log(res.data);
-      
-    }) 
-    .catch((err) => console.log(err));
-  }
+  //CHIAMATA x le tipologie
+  const fetchTipologie = () => {
+    axios
+      .get(api_url_tipologie)
+      .then((res) => {
+        setTipologie(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
 
- 
+  //paramentri x cercare indirizzi
+  const handleSearch = (e) => {
+    const searchParam = e.target.value.toLowerCase();
+    const matchFilter = filteredImmobili.filter((immobile) => {
+      const indirizzo = immobile.indirizzo.toLowerCase();
+      return indirizzo.toLowerCase().includes(e.target.value.toLowerCase());
+    });
+    setFilteredImmobili(matchFilter);
+    setSearchTerm(searchParam);
+  };
 
-  const handleSearch = (e) =>{
-    
-    const searchParam = e.target.value.toLowerCase()
-    const matchFilter = filteredImmobili.filter(immobile =>{
-      const indirizzo = immobile.indirizzo.toLowerCase()
-      return indirizzo.toLowerCase().includes(e.target.value.toLowerCase())
-    })
-     setFilteredImmobili(matchFilter) 
-     setSearchTerm(searchParam)     
-  }
-
-  const handleAdvancedSearch = ({stanze, bagni, tipologia}) =>{
-    
-    const matchFilter = immobili.filter(immobile =>{
-      const matchesStanze = stanze ? immobile.stanze === stanze : true;
-      const matchesBagni = bagni ? immobile.bagni === bagni : true;
-      const matchesTipologia = tipologia ? immobile.tipologia.toLowerCase().includes(tipologia.toLowerCase()) : true;
+  //paramentri ricerca avanzata
+  const handleAdvancedSearch = ({ stanze, bagni, tipologia }) => {
+    const matchFilter = immobili.filter((immobile) => {
+      const matchesStanze = stanze ? immobile.stanze == stanze : true;
+      const matchesBagni = bagni ? immobile.bagni == bagni : true;
+      const matchesTipologia = tipologia
+        ? tipologia.includes(tipologia.toLowerCase())
+        : true;
       return matchesStanze && matchesBagni && matchesTipologia;
-    })
-      setFilteredImmobili(matchFilter)      
-  }
+    });
+    setFilteredImmobili(matchFilter);
+  };
 
   const value = {
     immobili,
@@ -82,15 +84,15 @@ const GlobalProvider = ({ children }) => {
     immobile,
     fetchImmobile,
     filteredImmobili,
-    fetchFilteredImmobili,     
+    fetchFilteredImmobili,
     setFilteredImmobili,
     handleSearch,
     searchTerm,
     handleAdvancedSearch,
     tipologie,
-    fetchTipologie
+    fetchTipologie,
   };
-  
+
   return (
     <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>
   );
