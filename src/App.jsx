@@ -4,7 +4,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import HomePage from "./pages/HomePage";
 import Detail from "./pages/Detail";
 import NewHouse from "./pages/NewHouse";
-import Search from "./pages/Search";
+import AdvancedSearch from "./pages/AdvancedSearch";
 import NotFound404 from "./pages/NotFound404";
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
             <Route path="/" Component={HomePage} />
             <Route path="/dettaglio-immobile/:id" Component={Detail} />
             <Route path="/nuovo-immobile" Component={NewHouse} />
-            <Route path="/ricerca-avanzata" Component={Search} />
+            <Route path="/ricerca-avanzata" Component={AdvancedSearch} />
             <Route path="/*" Component={NotFound404} />
           </Route>
         </Routes>

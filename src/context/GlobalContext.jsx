@@ -5,9 +5,12 @@ const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
   const api_url = import.meta.env.VITE_API_URL;
+  const api_url_filter = import.meta.env.VITE_API_URL_FILTERED;
 
   const [immobili, setImmobili] = useState([]);
   const [immobile, setImmobile] = useState(null);
+  const [filteredImmobili, setFilteredImmobili] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
 
   const fetchImmobili = () => {
     axios
@@ -27,13 +30,40 @@ const GlobalProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
+  const fetchFilteredImmobili = (searchTerm) => {
+    axios
+      .get(`${api_url_filter}indirizzo=${searchTerm}`)
+      .then((res) => {
+        setFilteredImmobili(res.data);        
+      })
+      .catch((err) => console.log(err));
+  };
+
+ 
+
+  const handleSearch = (e) =>{
+    const searchParam = e.target.value.toLowerCase()
+    const matchFilter = filteredImmobili.filter(immobile =>{
+      const indirizzo = immobile.indirizzo.toLowerCase()
+      return indirizzo.toLowerCase().includes(e.target.value.toLowerCase())
+    })
+     setFilteredImmobili(matchFilter) 
+     setSearchTerm(searchParam)
+     console.log(searchTerm);
+  }
+
   const value = {
     immobili,
     fetchImmobili,
     immobile,
     fetchImmobile,
+    filteredImmobili,
+    fetchFilteredImmobili,     
+    setFilteredImmobili,
+    handleSearch,
+    searchTerm
   };
-
+  
   return (
     <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>
   );
