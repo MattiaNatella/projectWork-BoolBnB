@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Card = ({immobile}) =>{
   return (
     <div>
-      <div className="card">
+      <div className="card mt-2">
         <img src="..." className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{immobile.descrizione_immobile}</h5>
