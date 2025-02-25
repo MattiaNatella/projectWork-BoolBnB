@@ -9,8 +9,11 @@ const ModalReview = () => {
 
   return (
     <div className="my-2 m-lg-0 d-none d-lg-block text-center">
-      <button type="button" className="btn btn-primary" onClick={handleShow}>
-        <i className="bi bi-plus-circle me-2"></i>
+      <button
+        type="button"
+        className="btn btn-primary my-5"
+        onClick={handleShow}
+      >
         Aggiungi recensione
       </button>
 
@@ -28,8 +31,7 @@ const ModalReview = () => {
               <div className="modal-header">
                 <h5 className="fw-semibold my-auto">
                   {" "}
-                  <i className="bi bi-person-plus fs-5 me-2"></i>Aggiungi la
-                  nuova recensione
+                  Aggiungi la nuova recensione
                 </h5>
 
                 <button
