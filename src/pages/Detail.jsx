@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 import { useParams } from "react-router-dom";
+import ModalReview from "../components/ModalReview";
 
 const Detail = () => {
   const { fetchImmobile, immobile } = useGlobalContext();
@@ -27,9 +28,10 @@ const Detail = () => {
 
         <div className="recensioni mt-5">
           <h1>Recensioni:</h1>
-          <button className="btn btn-primary my-3">
+          <ModalReview />
+          {/* <button className="btn btn-primary my-3">
             Aggiungi una recensione
-          </button>
+          </button> */}
         </div>
       </div>
     </>
