@@ -1,7 +1,7 @@
-import { useState, useEffect, useContext } from "react"
+
 import{ Link } from "react-router-dom"
 import { useGlobalContext } from "../context/GlobalContext"
-import axios from "axios"
+
 
 const Searchbar = () =>{
   
@@ -9,23 +9,23 @@ const Searchbar = () =>{
   
   return (
 
-
-    <div className="mt-3 d-flex">
-      <div>
-        <input 
-          className="form-control me-2"
-          type="search"
-          placeholder="Cerca un immobile"
-          aria-label="Search"
-          onChange={handleSearch}       
-        />
-      </div>
-
-      <div>
-        <Link to={'/ricerca-avanzata'} className="btn btn-primary">Cerca immobile</Link>
-      </div>
-
-    </div>
+    
+        <div className="d-flex mt-2"> 
+          <div>
+            <input 
+              className="form-control searchBar"
+              type="search"
+              placeholder="Cerca un immobile"
+              aria-label="Search"
+              onChange={handleSearch}       
+            />      
+          </div>
+          <div>
+            <Link to={'/ricerca-avanzata'} className="btn btn-primary ms-2">Cerca immobile</Link>
+          </div>
+        </div>
+      
+    
   )
 }
 
