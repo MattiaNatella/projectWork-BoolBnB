@@ -11,15 +11,18 @@ const Card = ({ immobile }) => {
         />
         <div className="card-body">
           <h5 className="card-title">{immobile.descrizione_immobile}</h5>
-          <p className="card-text">Stanze: {immobile.stanze}</p>
-          <p className="card-text">Bagni: {immobile.bagni}</p>
+          <p className="card-text"><strong>Indirizzo: </strong>{immobile.indirizzo}</p>
+          <p className="card-text"><strong>Metri quadrati: </strong>{immobile.metri_quadrati}</p>
+          <p className="card-text"><strong>Stanze: </strong>{immobile.stanze}</p>
+          <p className="card-text"><strong>Bagni: </strong>{immobile.bagni}</p>
+          <p className="card-text"><strong>Letti: </strong>{immobile.letti}</p>
           <div>
             <Link
-              to={`/dettaglio-immobile/${immobile.id}`}
+              to={`/dettaglio-immoORDER BY voto DESCORDER BY voto DESCORDER BY voto DESCbile/${immobile.id}`}
               className="btn btn-success"
             >
               Vedi dettagli
-            </Link>
+            </Link> 
           </div>
         </div>
       </div>
