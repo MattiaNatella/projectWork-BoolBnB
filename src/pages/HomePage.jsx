@@ -5,10 +5,9 @@ import Card from "../components/Card";
 import Searchbar from "../components/Searchbar";
 
 const HomePage = () => {
+  const { immobili, fetchImmobili } = useGlobalContext();
 
-  const { immobili, fetchImmobili } = useGlobalContext()
-
-  useEffect(fetchImmobili, [])
+  useEffect(fetchImmobili, []);
 
   return (
     <div>
@@ -16,9 +15,9 @@ const HomePage = () => {
         <div className="d-flex justify-content-center">
           <Searchbar />
         </div>
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="row row-cols-lg-3 mb-5">
           {immobili.map((immobile) => (
-            <div className="col-md-4 m-2" key={immobile.id}>
+            <div key={immobile.id}>
               <Card immobile={immobile} />
             </div>
           ))}
