@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext";
+import Button from "../partials/Button";
+import SearchBar from "../partials/SearchBar";
 
 const Searchbar = () => {
   const { handleSearch, immobili } = useGlobalContext();
@@ -22,22 +23,10 @@ const Searchbar = () => {
   };
 
   return (
-    <div className="d-flex mt-2">
+    <div className="d-flex mt-5">
+      <SearchBar error={error} validateSearch={validateSearch} />
       <div>
-        <input
-          className="form-control searchBar"
-          type="search"
-          placeholder="Cerca un immobile nella tua città"
-          aria-label="Search"
-          onChange={validateSearch}
-        />
-        {error && <div className="text-danger mt-2">{error}</div>}
-      </div>
-      <div>
-        <Link to={error ? "#" : "/ricerca-avanzata"}
-          className={`btn btn-primary ms-2 ${error ? "disabled" : ""}`}>
-          Ricerca Avanzata
-        </Link>
+        <Button error={error} text={"Ricerca avanzata"} />
       </div>
     </div>
   );

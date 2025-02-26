@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar">
+      <nav className="navbar bg-wine">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             <img
@@ -14,7 +15,7 @@ const Navbar = () => {
               className="d-inline-block align-text-top imgLogo"
             />
           </a>
-          <Link to={"/nuovo-immobile"} type="button" className="btn btn-info">
+          <Link to={"/nuovo-immobile"} type="button" className="btn bg-white-smoke text-wine border-5">
             Aggiungi Immobile
           </Link>
         </div>

@@ -18,7 +18,7 @@ const Card = ({ immobile }) => {
           <div>
             <Link
               to={`/dettaglio-immobile/${immobile.id}`}
-              className="btn btn-success"
+              className="btn btn-success bg-wine text-white-smoke"
             >
               Vedi dettagli
             </Link>

@@ -10,6 +10,10 @@ header {
   border-radius: 15px;
 }
 
+body {
+  background-color: #F7F4F3;
+}
+
 .csm-card {
   width: 100%;
   min-height: 30%;
@@ -27,4 +31,21 @@ header {
 .csm-image {
   width: 100%;
   aspect-ratio: 16/11;
+}
+
+
+.bg-white-smoke {
+  background-color: #F7F4F3;
+}
+
+.text-white-smoke {
+  color: #F7F4F3;
+}
+
+.bg-wine {
+  background-color: #5b2333;
+}
+
+.text-wine {
+  color: #5b2333;
 }
