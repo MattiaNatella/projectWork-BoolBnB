@@ -2,15 +2,17 @@ import { Link } from "react-router-dom";
 
 const Card = ({ immobile }) => {
   return (
-    <div className="d-flex justify-content-center mt-2">
-      <div className="houseCard card">
+    <div className="d-flex justify-content-center mt-5">
+      <div className="card csm-card">
         <img
           src={immobile.immagine}
-          className="card-img-top"
+          className="card-img-top csm-image align-self-center"
           alt={immobile.descrizione_immobile}
         />
         <div className="card-body">
-          <h5 className="card-title">{immobile.descrizione_immobile}</h5>
+          <h6 className="card-title fw-bold">
+            {immobile.descrizione_immobile}
+          </h6>
           <p className="card-text">Stanze: {immobile.stanze}</p>
           <p className="card-text">Bagni: {immobile.bagni}</p>
           <div>

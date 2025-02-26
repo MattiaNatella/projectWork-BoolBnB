@@ -14,7 +14,7 @@ const Detail = () => {
         <h3 className="mt-5">{immobile?.descrizione_immobile}</h3>
         <img
           className="w-100 py-3"
-          src="https://placehold.co/600x400/EEE/31343C"
+          src={immobile?.immagine}
           alt="placeholder"
         />
 

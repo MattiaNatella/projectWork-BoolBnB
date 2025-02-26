@@ -2,16 +2,21 @@ header a {
   text-decoration: none;
 }
 
-header{
+header {
   background-color: navy;
 }
 
-.imgLogo{
+.imgLogo {
   border-radius: 15px;
 }
 
-.houseCard{ 
-  width: 400px;
+.csm-card {
+  width: 100%;
+  min-height: 30%;
+  border-radius: 15px;
 }
 
-
+.csm-image {
+  width: 100%;
+  aspect-ratio: 16/11;
+}
