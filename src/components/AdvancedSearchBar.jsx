@@ -21,7 +21,7 @@ const AdvancedSearchBar = () => {
 
   useEffect(() => {
     fetchTipologie();
-  }, [fetchTipologie]);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
