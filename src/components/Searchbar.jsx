@@ -1,8 +1,25 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext";
 
 const Searchbar = () => {
-  const { handleSearch } = useGlobalContext();
+  const { handleSearch, immobili } = useGlobalContext();
+  const [error, setError] = useState("");
+
+  const validateSearch = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const matchFilter = immobili.some(immobile => {
+      const indirizzo = immobile.indirizzo.toLowerCase();
+      return indirizzo.includes(searchTerm);
+    });
+
+    if (!matchFilter) {
+      setError("Nessun immobile trovato con questo indirizzo");
+    } else {
+      setError("");
+      handleSearch(e);
+    }
+  };
 
   return (
     <div className="d-flex mt-2">
@@ -12,11 +29,13 @@ const Searchbar = () => {
           type="search"
           placeholder="Cerca un immobile nella tua città"
           aria-label="Search"
-          onChange={handleSearch}
+          onChange={validateSearch}
         />
+        {error && <div className="text-danger mt-2">{error}</div>}
       </div>
       <div>
-        <Link to={"/ricerca-avanzata"} className="btn btn-primary ms-2">
+        <Link to={error ? "#" : "/ricerca-avanzata"}
+          className={`btn btn-primary ms-2 ${error ? "disabled" : ""}`}>
           Ricerca Avanzata
         </Link>
       </div>
