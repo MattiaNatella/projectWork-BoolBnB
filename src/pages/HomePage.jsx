@@ -6,23 +6,23 @@ import Searchbar from "../components/Searchbar";
 
 const HomePage = () => {
 
-  const {immobili, fetchImmobili} = useGlobalContext()
+  const { immobili, fetchImmobili } = useGlobalContext()
 
   useEffect(fetchImmobili, [])
 
   return (
     <div>
-      <div className="conatiner"> 
+      <div className="container">
         <div className="d-flex justify-content-center">
           <Searchbar />
         </div>
-        <div className="d-flex flex-wrap justify-content-center">        
+        <div className="d-flex flex-wrap justify-content-center">
           {immobili.map((immobile) => (
             <div className="col-md-4 m-2" key={immobile.id}>
               <Card immobile={immobile} />
             </div>
           ))}
-        </div>       
+        </div>
       </div>
       <Hearts />
     </div>

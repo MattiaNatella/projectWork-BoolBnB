@@ -5,20 +5,20 @@ import AdvancedSearchBar from "../components/AdvancedSearchBar";
 
 const AdvancedSearch = () => {
 
-  const {searchTerm, filteredImmobili, fetchFilteredImmobili} = useGlobalContext()
+  const { searchTerm, filteredImmobili, fetchFilteredImmobili } = useGlobalContext()
 
   useEffect(() => {
-    fetchFilteredImmobili(searchTerm); 
+    fetchFilteredImmobili(searchTerm);
     console.log(filteredImmobili);
-       
-  }, []);  
-  
+
+  }, []);
+
   return (
     <div className="container mt-2">
       <div className=" mt-2">
         <AdvancedSearchBar />
       </div>
-      <div className="col-12 mt-2">
+      <div className="row row-cols-lg-2 mt-2">
         {Array.isArray(filteredImmobili) && filteredImmobili?.map((immobile) => (
           <Card immobile={immobile} key={immobile.id} />
         ))}
