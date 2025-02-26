@@ -3,6 +3,7 @@ import { useGlobalContext } from "../context/GlobalContext";
 import { useEffect } from "react";
 import Card from "../components/Card";
 import Searchbar from "../components/Searchbar";
+import NewCard from "../partials/NewCard";
 
 const HomePage = () => {
   const { immobili, fetchImmobili } = useGlobalContext();
@@ -18,7 +19,7 @@ const HomePage = () => {
         <div className="row row-cols-lg-3 mb-5">
           {immobili.map((immobile) => (
             <div key={immobile.id}>
-              <Card immobile={immobile} />
+              <NewCard immobile={immobile} />
             </div>
           ))}
         </div>
