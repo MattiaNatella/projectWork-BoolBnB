@@ -80,7 +80,7 @@ const NewHouse = () => {
     <div className="container">
       <form action="#" onSubmit={handleSubmit}>
         <div className="mt-5 mb-3">
-          <h4 className="mb-3">Prima parlaci un po' di te</h4>
+          <h4 className="mb-3">Inserisci i tuoi dati</h4>
           <label htmlFor="nome">Nome</label>
           <input
             type="text"

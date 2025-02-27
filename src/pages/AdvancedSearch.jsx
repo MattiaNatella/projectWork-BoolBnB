@@ -17,7 +17,9 @@ const AdvancedSearch = () => {
       <div className="mt-2">
         <AdvancedSearchBar />
       </div>
+      <h2 className="mb-5">Ecco i risultati di ricerca per {searchTerm.toUpperCase()}</h2>
       <div className="row row-cols-lg-3 mb-5">
+
         {Array.isArray(filteredImmobili) &&
           filteredImmobili?.map((immobile) => (
             <NewCard immobile={immobile} key={immobile.id} />
