@@ -6,6 +6,10 @@ import Detail from "./pages/Detail";
 import NewHouse from "./pages/NewHouse";
 import AdvancedSearch from "./pages/AdvancedSearch";
 import NotFound404 from "./pages/NotFound404";
+import Info from "./pages/Info";
+import Contacts from "./pages/Contacts";
+import FAQ from "./pages/FAQ";
+import WorkWithUs from "./pages/WorkWithUs";
 
 const App = () => {
   return (
@@ -14,6 +18,10 @@ const App = () => {
         <Routes>
           <Route Component={DefaultLayout}>
             <Route path="/" Component={HomePage} />
+            <Route path="/chi-siamo" Component={Info} />
+            <Route path="/contatti" Component={Contacts} />
+            <Route path="/faq" Component={FAQ} />
+            <Route path="/lavora-con-noi" Component={WorkWithUs} />
             <Route path="/dettaglio-immobile/:id" Component={Detail} />
             <Route path="/nuovo-immobile" Component={NewHouse} />
             <Route path="/ricerca-avanzata" Component={AdvancedSearch} />
