@@ -89,6 +89,11 @@ const StyledWrapper = styled.div`
     fill: #5b2333;
     height: 28px;
     width: 28px;
+    transition: 1s infinite ease-in-out;
+  }
+
+  .like-icon:hover{
+  transform: scale(1.1);
   }
 
   .like-text {
