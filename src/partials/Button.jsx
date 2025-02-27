@@ -66,7 +66,7 @@ const StyledWrapper = styled.div`
   .button::before {
     content: "";
     position: absolute;
-    width: 100px;
+    width: 20%;
     height: 100%;
     background-image: linear-gradient(
       120deg,

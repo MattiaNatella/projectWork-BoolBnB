@@ -47,34 +47,11 @@ const AdvancedSearchBar = () => {
 
   return (
     <StyledWrapper>
-      <form onSubmit={handleSubmit}>
-        <div className="searchbar d-flex justify-content-center align-items-center gap-3 my-4">
-          <label htmlFor="stanze">Stanze</label>
-          <input
-            className="input"
-            type="number"
-            placeholder="inserisci numero di stanze"
-            aria-label="Search"
-            onChange={handleChange}
-            name="stanze"
-            value={filters.stanze}
-            min={1}
-            max={10}
-          />
-          <label htmlFor="bagni">Bagni</label>
-          <input
-            className="input"
-            type="number"
-            placeholder="inserisci numero di bagni"
-            aria-label="Search"
-            onChange={handleChange}
-            name="bagni"
-            value={filters.bagni}
-            min={1}
-            max={10}
-          />
-        </div>
-
+      <div>
+      <form
+      className="d-flex align-items-center justify-content-between align-items-center gap-3" 
+      onSubmit={handleSubmit}>
+        <label htmlFor="tipologia">Tipologia</label>
         <select
           className="input2 form-select my-2"
           aria-label="Default select example"
@@ -90,8 +67,36 @@ const AdvancedSearchBar = () => {
               </option>
             ))}
         </select>
-        <h6 className="text-center text-wine mb-3">{error}</h6>
-        <div className="mb-5 d-flex justify-content-center">
+
+        <div className="d-flex align-items-center gap-3">
+          <label htmlFor="stanze">Stanze</label>
+          <input
+            className="input"
+            type="number"
+            placeholder=""
+            aria-label="Search"
+            onChange={handleChange}
+            name="stanze"
+            value={filters.stanze}
+            min={1}
+            max={10}
+          />
+          <label htmlFor="bagni">Bagni</label>
+          <input
+            className="input"
+            type="number"
+            placeholder=""
+            aria-label="Search"
+            onChange={handleChange}
+            name="bagni"
+            value={filters.bagni}
+            min={1}
+            max={10}
+          />
+        </div>
+        
+        
+        <div className="d-flex justify-content-center">
           <button className="button w-100" type="submit">
             Cerca
             <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
@@ -104,11 +109,16 @@ const AdvancedSearchBar = () => {
           </button>
         </div>
       </form>
+      <div className="col-12 text-center mt-3">
+        <h6 className="text-center text-wine mb-3">{error}</h6>    
+      </div>
+      </div>
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
+width: 70%;
   .input[type="number"] {
     display: block;
     color: rgb(34, 34, 34);
@@ -125,7 +135,7 @@ const StyledWrapper = styled.div`
     padding: 22px 15px;
     outline: none;
     text-align: center;
-    width: 100%;
+%;
     transition: 0.5s;
   }
 
@@ -163,6 +173,7 @@ const StyledWrapper = styled.div`
     outline: none;
     overflow: hidden;
     font-size: 15px;
+    width: 20%;
   }
 
   .icon {
@@ -178,7 +189,7 @@ const StyledWrapper = styled.div`
   .button::before {
     content: "";
     position: absolute;
-    width: 100px;
+    width: 20%;
     height: 100%;
     background-image: linear-gradient(
       120deg,

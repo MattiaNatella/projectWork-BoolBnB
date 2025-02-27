@@ -14,7 +14,7 @@ const AdvancedSearch = () => {
 
   return (
     <div className="container mt-2">
-      <div className="mt-2">
+      <div className="mt-2 d-flex justify-content-center">
         <AdvancedSearchBar />
       </div>
       <h2 className="mb-5">Ecco i risultati di ricerca per {searchTerm.toUpperCase()}</h2>
