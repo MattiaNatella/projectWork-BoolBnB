@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 import { useParams } from "react-router-dom";
 import ModalReview from "../components/ModalReview";
+import ReviewCard from "../components/Reviews";
 
 
 const Detail = () => {
@@ -35,6 +36,9 @@ const Detail = () => {
         <div className="recensioni mt-5">
           <h1>Recensioni:</h1>
           <ModalReview />
+        </div>
+        <div className="row row-cols-3 m-2">
+         {immobile?.reviews.map(recensione => (<ReviewCard review={recensione} key={recensione.id} />))} 
         </div>
       </div>
     </>
