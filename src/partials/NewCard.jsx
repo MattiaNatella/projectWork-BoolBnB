@@ -13,14 +13,23 @@ const NewCard = ({ immobile }) => {
         />
         <div className="card__content">
           <p className="card__title">{immobile.descrizione_immobile}</p>
-          <p className="card__description">Stanze: {immobile.stanze};</p>
-          <p className="card__description">Bagni: {immobile.bagni};</p>
           <p className="card__description">
-            Metri Quadrati: {immobile.metri_quadrati}mq;
+            <span className="fw-bolder">Stanze:</span> {immobile.stanze}
           </p>
-          <p className="card__description">Indirizzo: {immobile.indirizzo};</p>
           <p className="card__description">
-            Recensioni: {immobile.num_recensioni};
+            <span className="fw-bolder">Bagni: </span>
+            {immobile.bagni}
+          </p>
+          <p className="card__description">
+            <span className="fw-bolder">Metri Quadrati:</span>{" "}
+            {immobile.metri_quadrati}m²
+          </p>
+          <p className="card__description">
+            <span className="fw-bolder">Indirizzo:</span> {immobile.indirizzo}
+          </p>
+          <p className="card__description">
+            <span className="fw-bolder">Recensioni:</span>{" "}
+            {immobile.num_recensioni}
           </p>
           <div className="mt-3 d-flex justify-content-around">
             <CardButton immobile={immobile} />
