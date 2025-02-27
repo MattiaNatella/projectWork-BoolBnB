@@ -49,7 +49,7 @@ const AdvancedSearchBar = () => {
     <StyledWrapper>
       <div>
       <form
-      className="d-flex align-items-center justify-content-between align-items-center gap-3 mt-3" 
+      className="d-flex align-items-center justify-content-between align-items-center gap-3 mt-5" 
       onSubmit={handleSubmit}>
         <label htmlFor="tipologia">Tipologia</label>
         <select
