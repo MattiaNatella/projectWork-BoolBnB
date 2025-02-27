@@ -11,7 +11,7 @@ const AnimatedTextNavbar = () => {
     <StyledWrapper>
       <div className="card">
         <div className="loader">
-          <p className='text-whine'>Da noi troverai</p>
+          <p>Da noi troverai</p>
           <div className="words">
             <span className="word"></span>
             <span className="word">Appartamenti</span>

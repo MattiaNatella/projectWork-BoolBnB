@@ -25,7 +25,7 @@ const Detail = () => {
             <p><strong>Indirizzo:</strong> {immobile?.indirizzo}</p>
             <p><strong>Stanze:</strong> {immobile?.stanze}</p>
             <p><strong>Bagni:</strong> {immobile?.bagni}</p>
-            <p> {immobile?.descrizione_immobile}</p>
+            <p> {immobile?.testo_descrittivo}</p>
           </div>
         </div>
 

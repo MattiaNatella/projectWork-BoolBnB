@@ -1,6 +1,6 @@
 import Button from "../partials/Button";
-import AnimatedTextNavbar from "../partials/AnimatedTextNavbar";
 import { Link } from "react-router-dom";
+import InteractiveNavbar from "../partials/InteractiveNavbar";
 
 const Navbar = () => {
   return (
@@ -20,33 +20,7 @@ const Navbar = () => {
           </div>
 
           <div>
-            <ul className="list-unstyled gap-5 mt-4 d-none d-sm-flex">
-              <li>
-                <Link to={"/"} className="text-white-smoke">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to={"/chi-siamo"} className="text-white-smoke">
-                  Chi siamo
-                </Link>
-              </li>
-              <li>
-                <Link to={"/faq"} className="text-white-smoke">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link to={"/lavora-con-noi"} className="text-white-smoke">
-                  Lavora con noi
-                </Link>
-              </li>
-              <li>
-                <Link to={"/contatti"} className="text-white-smoke">
-                  Contatti
-                </Link>
-              </li>
-            </ul>
+            <InteractiveNavbar />
           </div>
           <div>
             <Button text={"Aggiungi Immobile"} link={"/nuovo-immobile"} />

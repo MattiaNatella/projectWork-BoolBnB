@@ -3,12 +3,13 @@ header a {
 }
 
 header {
+  position: relative;
   background-color: navy;
   -webkit-box-shadow: 0px 18px 15px -10px rgba(0, 0, 0, 0.8);
   box-shadow: 0px 18px 15px -10px rgba(0, 0, 0, 0.8);
 }
 
-body {
+main {
   background-color: #f7f4f3;
 }
 
