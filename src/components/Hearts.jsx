@@ -2,10 +2,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const Button = ({ immobile }) => {
+const Hearts = (props) => {
+
+  const { immobile, cuoricini, setCuoricini } = props
   const APICuoricini =
     import.meta.env.VITE_API_URL + "/" + immobile.id + "/cuoricini";
-  const [cuoricini, setCuoricini] = useState(immobile.voto);
+
   const [clicked, setClicked] = useState(false);
 
   const updateCuoricini = () => {
@@ -138,4 +140,4 @@ const StyledWrapper = styled.div`
   }
 `;
 
-export default Button;
+export default Hearts;
