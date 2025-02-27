@@ -23,6 +23,7 @@ const Button = ({ text, error, link }) => {
 };
 
 const StyledWrapper = styled.div`
+
   .button {
     position: relative;
     transition: all 0.3s ease-in-out;
@@ -32,7 +33,6 @@ const StyledWrapper = styled.div`
     background-color: #5b2333;
     border-radius: 9999px;
     display: flex;
-    align-items: center;
     justify-content: center;
     cursor: pointer;
     color: #f7f4f3;

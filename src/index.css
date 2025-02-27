@@ -4,10 +4,8 @@ header a {
 
 header {
   background-color: navy;
-}
-
-.imgLogo {
-  border-radius: 15px;
+  -webkit-box-shadow: 0px 18px 15px -10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 18px 15px -10px rgba(0, 0, 0, 0.8);
 }
 
 body {

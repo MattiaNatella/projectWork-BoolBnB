@@ -1,21 +1,27 @@
 import Button from "../partials/Button";
-import { Link } from "react-router-dom";
+import AnimatedTextNavbar from "../partials/AnimatedTextNavbar";
 
 const Navbar = () => {
   return (
     <div>
       <nav className="navbar bg-wine">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            <img
-              src="https://img.freepik.com/vettori-premium/eccezionale-monogramma-bn-o-bnb-o-nb-lettere-logo-design_873531-453.jpg?w=996"
-              alt="Logo"
-              width="100"
-              height="100"
-              className="d-inline-block align-text-top imgLogo"
-            />
-          </a>
-          <Button text={"Aggiungi Immobile"} link={"/nuovo-immobile"} />
+        <div className="container d-flex justify-content-between">
+          <div>
+            <a className="navbar-brand" href="/">
+              <img
+                src="../../public/BoolBnb-logo.jpg"
+                alt="Logo"
+                width="100"
+                height="100"
+                className="d-inline-block align-text-top w-100 imgLogo"
+              />
+            </a>
+          </div>
+
+          <div>
+            <Button text={"Aggiungi Immobile"} link={"/nuovo-immobile"} />
+          </div>
+
         </div>
       </nav>
     </div>
