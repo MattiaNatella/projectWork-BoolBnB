@@ -1,5 +1,5 @@
+import Button from "../partials/Button";
 import { Link } from "react-router-dom";
-
 
 const Navbar = () => {
   return (
@@ -15,9 +15,7 @@ const Navbar = () => {
               className="d-inline-block align-text-top imgLogo"
             />
           </a>
-          <Link to={"/nuovo-immobile"} type="button" className="btn bg-white-smoke text-wine border-5">
-            Aggiungi Immobile
-          </Link>
+          <Button text={"Aggiungi Immobile"} link={"/nuovo-immobile"} />
         </div>
       </nav>
     </div>
