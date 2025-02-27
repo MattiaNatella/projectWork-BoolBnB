@@ -21,14 +21,14 @@ const NewCard = ({ immobile }) => {
             {immobile.bagni}
           </p>
           <p className="card__description">
-            <span className="fw-bolder">Metri Quadrati:</span>{" "}
+            <span className="fw-bolder">Metri Quadrati: </span>
             {immobile.metri_quadrati}m²
           </p>
           <p className="card__description">
             <span className="fw-bolder">Indirizzo:</span> {immobile.indirizzo}
           </p>
           <p className="card__description">
-            <span className="fw-bolder">Recensioni:</span>{" "}
+            <span className="fw-bolder">Recensioni: </span>
             {immobile.num_recensioni}
           </p>
           <div className="mt-3 d-flex justify-content-around">
