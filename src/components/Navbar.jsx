@@ -20,7 +20,7 @@ const Navbar = () => {
           </div>
 
           <div>
-            <ul className="d-flex list-unstyled gap-5 mt-4">
+            <ul className="list-unstyled gap-5 mt-4 d-none d-sm-flex">
               <li>
                 <Link to={"/"} className="text-white-smoke">
                   Home

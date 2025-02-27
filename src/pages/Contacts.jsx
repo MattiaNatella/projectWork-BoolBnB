@@ -23,7 +23,7 @@ const Contacts = () => {
                 <strong>Telefono:</strong> +39 123 456 7890
               </p>
               <p>
-                <strong>Indirizzo:</strong> Via Roma, 123, 00100 Roma, Italia
+                <strong>Indirizzo:</strong> Via Brombeis, Napoli, Italia
               </p>
             </div>
             <h2 className="subtitle">Modulo di Contatto</h2>
@@ -66,7 +66,7 @@ const Contacts = () => {
             <h2 className="subtitle">La Nostra Posizione</h2>
             <div className="map">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153168!3d-37.81627927975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d8b8f8b8f8b8!2sBoolBnB!5e0!3m2!1sit!2sit!4v1616161616161!5m2!1sit!2sit"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.123456789012!2d14.250000000000!3d40.850000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b08a123456789%3A0x1234567890abcdef!2sVia%20Brombeis%2C%20Napoli%2C%20Italia!5e0!3m2!1sit!2sit!4v1616161616161!5m2!1sit!2sit"
                 width="100%"
                 height="350"
                 style={{ border: 0 }}
