@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../context/GlobalContext";
 import { useEffect } from "react";
-import Card from "../components/Card";
 import AdvancedSearchBar from "../components/AdvancedSearchBar";
+import NewCard from "../partials/NewCard";
 
 const AdvancedSearch = () => {
   const { searchTerm, filteredImmobili, fetchFilteredImmobili } =
@@ -14,13 +14,13 @@ const AdvancedSearch = () => {
 
   return (
     <div className="container mt-2">
-      <div className=" mt-2">
+      <div className="mt-2">
         <AdvancedSearchBar />
       </div>
       <div className="row row-cols-lg-3 mb-5">
         {Array.isArray(filteredImmobili) &&
           filteredImmobili?.map((immobile) => (
-            <Card immobile={immobile} key={immobile.id} />
+            <NewCard immobile={immobile} key={immobile.id} />
           ))}
       </div>
     </div>

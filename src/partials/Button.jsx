@@ -1,24 +1,26 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-
-const Button = ({ text, error }) => {
-
-
-
-    return (
-        <StyledWrapper>
-            <Link to={error ? "#" : "/ricerca-avanzata"}
-                className={`btn button ms-2 ${error ? "disabled" : ""}`}>
-                {text}
-                <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
-                    <path clipRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fillRule="evenodd" />
-                </svg>
-            </Link>
-        </StyledWrapper>
-    );
-}
+const Button = ({ text, error, link }) => {
+  return (
+    <StyledWrapper>
+      <Link
+        to={error ? "#" : link}
+        className={`btn button ms-2 ${error ? "disabled" : ""}`}
+      >
+        {text}
+        <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
+          <path
+            clipRule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </Link>
+    </StyledWrapper>
+  );
+};
 
 const StyledWrapper = styled.div`
   .button {
@@ -27,13 +29,13 @@ const StyledWrapper = styled.div`
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
-  background-color: #5b2333;
+    background-color: #5b2333;
     border-radius: 9999px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-   color: #F7F4F3;
+    color: #f7f4f3;
     gap: 10px;
     font-weight: bold;
     border: 3px solid #ffffff4d;
@@ -89,6 +91,7 @@ const StyledWrapper = styled.div`
     to {
       left: 100%;
     }
-  }`;
+  }
+`;
 
 export default Button;

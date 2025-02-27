@@ -1,34 +1,39 @@
-
-import styled from 'styled-components';
-import CardButton from './CardButton';
+import styled from "styled-components";
+import CardButton from "./CardButton";
+import Hearts from "../components/Hearts";
 
 const NewCard = ({ immobile }) => {
-    return (
-        <StyledWrapper>
-            <div className="card">
-                <img
-                    src={immobile.immagine}
-                    className="card-img-top csm-image align-self-center"
-                    alt={immobile.descrizione_immobile}
-                />
-                <div className="card__content">
-                    <p className="card__title">{immobile.descrizione_immobile}</p>
-                    <p className="card__description">
-                        Stanze: {immobile.stanze}
-                        Bagni: {immobile.bagni}
-                    </p>
-                    <div>
-                        <CardButton immobile={immobile} />
-
-                    </div>
-                </div>
-            </div>
-        </StyledWrapper>
-    );
-}
+  return (
+    <StyledWrapper>
+      <div className="custom-card">
+        <img
+          src={immobile.immagine}
+          className="csm-image"
+          alt={immobile.descrizione_immobile}
+        />
+        <div className="card__content">
+          <p className="card__title">{immobile.descrizione_immobile}</p>
+          <p className="card__description">Stanze: {immobile.stanze}</p>
+          <p className="card__description">Bagni: {immobile.bagni}</p>
+          <p className="card__description">
+            Metri Quadrati: {immobile.metri_quadrati}mq
+          </p>
+          <p className="card__description">Indirizzo: {immobile.indirizzo}</p>
+          <p className="card__description">
+            Recensioni: {immobile.num_recensioni}
+          </p>
+          <div className="mt-3 d-flex justify-content-around">
+            <CardButton immobile={immobile} />
+            <Hearts immobile={immobile} />
+          </div>
+        </div>
+      </div>
+    </StyledWrapper>
+  );
+};
 
 const StyledWrapper = styled.div`
-  .card {
+  .custom-card {
     position: relative;
     width: 100%
     background-color: #f2f2f2;
@@ -43,13 +48,13 @@ const StyledWrapper = styled.div`
     margin-bottom: 20px;
   }
 
-  .card svg {
+  .csm-card svg {
     width: 48px;
     fill: #333;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  .card:hover {
+  .custom-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
   }
@@ -68,7 +73,7 @@ const StyledWrapper = styled.div`
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  .card:hover .card__content {
+  .custom-card:hover .card__content {
     transform: rotateX(0deg);
   }
 
@@ -77,10 +82,6 @@ const StyledWrapper = styled.div`
     font-size: 24px;
     color: #333;
     font-weight: 700;
-  }
-
-  .card:hover svg {
-    scale: 0;
   }
 
   .card__description {

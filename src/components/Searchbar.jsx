@@ -9,7 +9,7 @@ const Searchbar = () => {
 
   const validateSearch = (e) => {
     const searchTerm = e.target.value.toLowerCase();
-    const matchFilter = immobili.some(immobile => {
+    const matchFilter = immobili.some((immobile) => {
       const indirizzo = immobile.indirizzo.toLowerCase();
       return indirizzo.includes(searchTerm);
     });
@@ -23,10 +23,10 @@ const Searchbar = () => {
   };
 
   return (
-    <div className="d-flex mt-5">
+    <div className="d-flex my-5">
       <SearchBar error={error} validateSearch={validateSearch} />
       <div>
-        <Button error={error} text={"Ricerca avanzata"} />
+        <Button error={error} text={"Ricerca"} link={"/ricerca-avanzata"} />
       </div>
     </div>
   );

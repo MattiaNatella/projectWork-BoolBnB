@@ -1,7 +1,6 @@
 import Hearts from "../components/Hearts";
 import { useGlobalContext } from "../context/GlobalContext";
 import { useEffect } from "react";
-import Card from "../components/Card";
 import Searchbar from "../components/Searchbar";
 import NewCard from "../partials/NewCard";
 
@@ -24,7 +23,6 @@ const HomePage = () => {
           ))}
         </div>
       </div>
-      <Hearts />
     </div>
   );
 };
