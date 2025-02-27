@@ -19,6 +19,8 @@ const SearchBar = (props) => {
 }
 
 const StyledWrapper = styled.div`
+width: 90%;
+
   .input[type = "text"] {
     display: block;
     color: rgb(34, 34, 34);
@@ -31,16 +33,11 @@ const StyledWrapper = styled.div`
     padding: 22px 15px;
     outline: none;
     text-align: center;
-    width: 200px;
+    width: 70%;
     transition: 0.5s;
   }
-
-  .input[type = "text"]:hover {
-    width: 240px;
-  }
-
   .input[type = "text"]:focus {
-    width: 280px;
+    width: 100%;
   }`;
 
 export default SearchBar;

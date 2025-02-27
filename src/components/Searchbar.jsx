@@ -23,7 +23,7 @@ const Searchbar = () => {
   };
 
   return (
-    <div className="d-flex my-5">
+    <div className="d-flex my-5 w-100">
       <SearchBar error={error} validateSearch={validateSearch} />
       <div>
         <Button error={error} text={"Ricerca"} link={"/ricerca-avanzata"} />
