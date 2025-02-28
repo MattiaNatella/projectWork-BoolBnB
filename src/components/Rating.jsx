@@ -13,7 +13,7 @@ const Rating = ({ valutazione }) =>{
     }
   
   return (
-    <span className="text-warning">{starStamp()}</span>
+    <span className="">{starStamp()}</span>
   )
 
 }

@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context/GlobalContext";
 import { useParams } from "react-router-dom";
 import ModalReview from "../components/ModalReview";
 import ReviewCard from "../components/Reviews";
-
+import NewReviewCard from "../partials/NewReviewCard";
 
 const Detail = () => {
   const { fetchImmobile, immobile } = useGlobalContext();
@@ -36,9 +36,9 @@ const Detail = () => {
         <div className="recensioni mt-5">
           <h1>Recensioni:</h1>
           <ModalReview />
-        </div>
-        <div className="row row-cols-3 m-2">
-         {immobile?.reviews.map(recensione => (<ReviewCard review={recensione} key={recensione.id} />))} 
+        </div>  
+        <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 m-2">
+         {immobile?.reviews.map(recensione => (<NewReviewCard review={recensione} key={recensione.id} />))} 
         </div>
       </div>
     </>
