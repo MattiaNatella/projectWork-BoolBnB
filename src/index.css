@@ -62,6 +62,10 @@ Link {
   margin-left: auto;
 }
 
+.loader {
+  margin-left: 150px;
+}
+
 footer {
   background-color: #5b2333;
 
