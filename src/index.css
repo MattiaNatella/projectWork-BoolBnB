@@ -57,3 +57,19 @@ Link {
   left: 0.1rem;
   font-size: 0.8rem;
 }
+
+footer {
+  background-color: #5b2333;
+
+  p {
+    color: whitesmoke;
+  }
+
+  h5 {
+    color: whitesmoke;
+  }
+
+  ul {
+    color: whitesmoke;
+  }
+}
