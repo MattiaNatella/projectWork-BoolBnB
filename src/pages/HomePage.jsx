@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div>
       <div className="container">
-        <div className="d-flex justify-content-center mt-5">
+        <div className="d-flex justify-content-center pt-5">
           <AnimatedTextNavbar />
         </div>
         <div className="d-flex justify-content-center">
