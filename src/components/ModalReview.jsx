@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FormReview from "./FormReview";
+import Button from "../partials/Button";
 
 const ModalReview = ({ immobile }) => {
   const [showModal, setShowModal] = useState(false);
@@ -8,14 +9,8 @@ const ModalReview = ({ immobile }) => {
   const handleShow = () => setShowModal(true);
 
   return (
-    <div className="my-2 m-lg-0 d-none d-lg-block text-center">
-      <button
-        type="button"
-        className="btn btn-primary my-5"
-        onClick={handleShow}
-      >
-        Aggiungi recensione
-      </button>
+    <div className="text-center">
+      <Button onclick={handleShow} text={"Aggiungi Recensione"} />
 
       {showModal && (
         <div

@@ -2,25 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Button = ({ text, error, link }) => {
+const Button = ({ text, error, link, onclick }) => {
   return (
     <StyledWrapper>
       <Link
         to={error ? "#" : link}
         className={` btn button ms-2 ${error ? "disabled" : ""}`}
+        onClick={onclick || ""}
       >
         <div className="d-flex justify-content-between align-items-center gap-2">
           <span className="d-none d-sm-flex">{text}</span>
           <i className="fa-solid fa-circle-plus"></i>
         </div>
-
       </Link>
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
-
   .button {
     position: relative;
     transition: all 0.3s ease-in-out;
@@ -41,9 +40,9 @@ const StyledWrapper = styled.div`
     font-size: 15px;
   }
 
-i {
-font-size: 1.1rem;
-}
+  i {
+    font-size: 1.1rem;
+  }
 
   .button:hover {
     transform: scale(1.05);

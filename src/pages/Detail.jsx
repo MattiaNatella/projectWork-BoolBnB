@@ -10,16 +10,25 @@ const Detail = () => {
   const { id } = useParams();
   useEffect(() => fetchImmobile(id), []);
 
+  const checkReviews = () => {
+    if (immobile?.recensioni == 0) {
+      return <p>Non ci sono recensioni per questo immobile</p>;
+    }
+    return immobile?.reviews.map((review) => (
+      <ReviewCard key={review.id} review={review} />
+    ));
+  };
+
   return (
     <>
       <div className="container py-5">
-        <div className="card-top d-flex gap-5 justify-content-between  ">
+        <div className="container-top rounded-5 d-flex justify-content-between  ">
           <img
             src={immobile?.immagine}
-            className="w-50"
+            className="w-50 csm-image rounded-start-5"
             alt="immagine immobile"
           />
-          <div>
+          <div className="p-3 csm-border rounded-end-5">
             <div className="d-flex justify-content-between mb-3">
               <h3>{immobile?.descrizione_immobile}</h3>
               <span className="fs-4">
@@ -46,15 +55,17 @@ const Detail = () => {
                 {immobile?.bagni}
               </p>
             </div>
-            <div className="recensioni mt-5">
-              <h1>Recensioni:</h1>
+          </div>
+        </div>
+        <div className="pt-5">
+          <h3 className="d-flex justify-content-between align-items-center">
+            Recensioni:{" "}
+            <span>
               <ModalReview immobile={immobile} />
-            </div>
-            <div className="row row-cols-3 m-2">
-              {immobile?.reviews.map((recensione) => (
-                <ReviewCard review={recensione} key={recensione.id} />
-              ))}
-            </div>
+            </span>{" "}
+          </h3>
+          <div className="recensioni mt-5">
+            <div>{checkReviews()}</div>
           </div>
         </div>
       </div>
