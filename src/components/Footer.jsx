@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Social from "./Social";
 
 const Footer = () => {
   return (
     <StyledFooter>
-      <div className="container d-flex flex-column justify-content-between">
-        <div className="row">
-          <div className="col-12 col-md-6">
+      <div className="container">
+        <div className="row row-cols-6 justify-content-between">
+          <div className="col">
             <h5>Link Utili</h5>
             <ul className="list-unstyled">
               <li>
@@ -30,7 +31,12 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col">
+            <div className="col">
+              <Social />
+            </div>
+          </div>
+          <div className="col">
             <h5>Contatti</h5>
             <p>Email: info@boolbnb.com</p>
             <p>Telefono: +39 123 456 7890</p>
@@ -82,7 +88,6 @@ const StyledFooter = styled.footer`
   }
 
   .container {
-    max-width: 1200px;
     margin: 0 auto;
   }
 `;
