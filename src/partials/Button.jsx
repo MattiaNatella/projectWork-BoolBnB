@@ -11,7 +11,7 @@ const Button = ({ text, error, link }) => {
       >
         <div className="d-flex justify-content-between align-items-center gap-2">
           <span className="d-none d-sm-flex">{text}</span>
-          <i class="fa-solid fa-circle-plus"></i>
+          <i className="fa-solid fa-circle-plus"></i>
         </div>
 
       </Link>

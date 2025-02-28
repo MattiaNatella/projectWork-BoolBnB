@@ -8,30 +8,30 @@ const InteractiveNavbar = () => {
             <div className="button-container d-none d-lg-flex">
 
                 <Link to={"/"} className="button text-white-smoke">
-                    <i class="text-wine fa-solid fa-house-chimney"></i>
+                    <i className="text-wine fa-solid fa-house-chimney"></i>
                 </Link>
 
 
                 <Link to={"/chi-siamo"} className="button text-white-smoke">
-                    <i class="text-wine fa-solid fa-users"></i>
+                    <i className="text-wine fa-solid fa-users"></i>
                 </Link>
 
 
 
                 <Link to={"/faq"} className="button text-white-smoke">
-                    <i class="text-wine fa-solid fa-clipboard-question"></i>
+                    <i className="text-wine fa-solid fa-clipboard-question"></i>
                 </Link>
 
 
 
                 <Link to={"/lavora-con-noi"} className="button text-white-smoke">
-                    <i class="text-wine fa-solid fa-handshake"></i>
+                    <i className="text-wine fa-solid fa-handshake"></i>
                 </Link>
 
 
 
                 <Link to={"/contatti"} className="button text-white-smoke">
-                    <i class="text-wine fa-solid fa-address-book"></i>
+                    <i className="text-wine fa-solid fa-address-book"></i>
                 </Link>
 
 

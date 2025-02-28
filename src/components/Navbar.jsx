@@ -10,7 +10,7 @@ const Navbar = () => {
           <div>
             <a className="navbar-brand" href="/">
               <img
-                src="../../public/BoolBnb-logo.jpg"
+                src="/BoolBnb-logo.jpg"
                 alt="Logo"
                 width="100"
                 height="100"
