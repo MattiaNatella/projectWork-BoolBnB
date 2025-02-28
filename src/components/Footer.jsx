@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="container">
       <div className="row row-cols-6 justify-content-center">
         <div className="col">
-          <h5>Link Utili</h5>
+          <h5 className="border-bottom">Link Utili</h5>
           <ul className="list-unstyled">
             <li>
               <a to="/">Home</a>
@@ -28,7 +28,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col">
-          <h5>Contatti</h5>
+          <h5 className="border-bottom">Contatti</h5>
           <p>Email: info@boolbnb.com</p>
           <p>Telefono: +39 123 456 7890</p>
         </div>
@@ -36,7 +36,7 @@ const Footer = () => {
 
       <div className="row mt-3">
         <div className="col-12 text-center">
-          <p>Seguici sui nostri social! <Social /></p>
+          <p>Seguici sui nostri social!<Social /> </p>
           <p>&copy; {new Date().getFullYear()} BoolBnB.</p>
 
         </div>

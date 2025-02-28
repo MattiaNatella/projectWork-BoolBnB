@@ -58,6 +58,10 @@ Link {
   font-size: 0.8rem;
 }
 
+.button-container {
+  margin-left: auto;
+}
+
 footer {
   background-color: #5b2333;
 
