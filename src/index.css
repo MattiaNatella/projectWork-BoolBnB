@@ -62,3 +62,27 @@ Link {
   border: 1px solid #5b2333;
   border-left: 0;
 }
+
+.button-container {
+  margin-left: auto;
+}
+
+.loader {
+  margin-left: 150px;
+}
+
+footer {
+  background-color: #5b2333;
+
+  p {
+    color: whitesmoke;
+  }
+
+  h5 {
+    color: whitesmoke;
+  }
+
+  ul {
+    color: whitesmoke;
+  }
+}

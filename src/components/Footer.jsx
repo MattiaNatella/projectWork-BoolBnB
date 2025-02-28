@@ -1,95 +1,50 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import Social from "./Social";
-
+import Social from "../partials/Social";
 const Footer = () => {
   return (
-    <StyledFooter>
-      <div className="container">
-        <div className="row row-cols-6 justify-content-between">
-          <div className="col">
-            <h5>Link Utili</h5>
-            <ul className="list-unstyled">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/chi-siamo">Chi siamo</Link>
-              </li>
-              <li>
-                <Link to="/servizi">Servizi</Link>
-              </li>
-              <li>
-                <Link to="/proprieta">Proprietà</Link>
-              </li>
-              <li>
-                <Link to="/faq">FAQ</Link>
-              </li>
-              <li>
-                <Link to="/contatti">Contatti</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="col">
-            <div className="col">
-              <Social />
-            </div>
-          </div>
-          <div className="col">
-            <h5>Contatti</h5>
-            <p>Email: info@boolbnb.com</p>
-            <p>Telefono: +39 123 456 7890</p>
-            {/* <div className="social-icons"></div> */}
-          </div>
+
+    <div className="container">
+      <div className="row row-cols-6 justify-content-center">
+        <div className="col">
+          <h5 className="border-bottom">Link Utili</h5>
+          <ul className="list-unstyled">
+            <li>
+              <a to="/">Home</a>
+            </li>
+            <li>
+              <a to="/chi-siamo">Chi siamo</a>
+            </li>
+            <li>
+              <a to="/servizi">Servizi</a>
+            </li>
+            <li>
+              <a to="/proprieta">Proprietà</a>
+            </li>
+            <li>
+              <a to="/faq">FAQ</a>
+            </li>
+            <li>
+              <a to="/contatti">Contatti</a>
+            </li>
+          </ul>
         </div>
-        <div className="row mt-5">
-          <div className="col-12 text-center">
-            <p>&copy; {new Date().getFullYear()} BoolBnB.</p>
-          </div>
+        <div className="col">
+          <h5 className="border-bottom">Contatti</h5>
+          <p>Email: info@boolbnb.com</p>
+          <p>Telefono: +39 123 456 7890</p>
         </div>
       </div>
-    </StyledFooter>
+
+      <div className="row mt-3">
+        <div className="col-12 text-center">
+          <p>Seguici sui nostri social!<Social /> </p>
+          <p>&copy; {new Date().getFullYear()} BoolBnB.</p>
+
+        </div>
+      </div>
+    </div>
+
   );
 };
 
-const StyledFooter = styled.footer`
-  background-color: #5b2333;
-  color: #f7f4f3;
-  padding: 2rem 0;
-
-  h5 {
-    color: #f7f4f3;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    margin: 0.5rem 0;
-  }
-
-  a {
-    color: #f7f4f3;
-    text-decoration: none;
-    transition: color 0.2s;
-
-    &:hover {
-      color: #d4d4d4;
-    }
-  }
-
-  .social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-
-    a {
-      font-size: 1.5rem;
-    }
-  }
-
-  .container {
-    margin: 0 auto;
-  }
-`;
 
 export default Footer;
