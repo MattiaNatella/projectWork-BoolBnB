@@ -16,7 +16,7 @@ const Detail = () => {
       return <p>Non ci sono recensioni per questo immobile</p>;
     }
     return immobile?.reviews.map((review) => (
-      <ReviewCard key={review.id} review={review} />
+      <NewReviewCard key={review.id} review={review} />
     ));
   };
 
@@ -66,7 +66,9 @@ const Detail = () => {
             </span>{" "}
           </h3>
           <div className="recensioni mt-5">
-            <div>{checkReviews()}</div>
+            <div className="row row-cols-sm-1 row-cols-md-3 row-cols-lg-6">
+              {checkReviews()}
+            </div>
           </div>
         </div>
       </div>
