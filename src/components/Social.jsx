@@ -15,7 +15,7 @@ const Social = () => {
         </div>
         <div className="down">
           <button className="card3">
-            <i class="fa-brands fa-facebook facebook"></i>
+            <i className="fa-brands fa-facebook facebook"></i>
 
           </button>
           <button className="card4">

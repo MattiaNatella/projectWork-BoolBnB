@@ -1,63 +1,88 @@
 import { useState } from "react";
+import axios from "axios";
+import { useGlobalContext } from "../context/GlobalContext";
 
-const FormReview = ({ handleClose }) => {
+const FormReview = ({ handleClose, immobile }) => {
+ 
+  const { fetchImmobile } = useGlobalContext()
+
+  const api_url = `${import.meta.env.VITE_API_URL}/${immobile.id}/recensioni`;
+  console.log(immobile.id);
+  
+
   const initialData = {
-    name: "",
-    vote: "",
+    username: "",    
     valutazione: "",
+    testo: "",
     gg_permanenza: "",
   };
 
   const [formReview, setFormReview] = useState(initialData);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const hadleSetValue = (e) => {
-    const { value, name } = e.target;
-    setFormReview((prev) => ({ ...prev, [name]: value }));
-  };
+  const validateReview = () =>{
+    if (!formReview.username || !formReview.testo) return false
+    if(isNaN(formReview.valutazione) || formReview.valutazione < 1 || formReview.valutazione > 5) return false
+    if (isNaN(formReview.gg_permanenza) || formReview.gg_permanenza < 1) return false;
+    return true
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormReview(initialData);
+
+    if(!validateReview()){
+      setErrorMsg("inserire valori corretto")
+      return
+    }
+    axios.post(api_url,formReview, {headers: { 'Content-Type': 'application/json'}})
+    .then((res)=>{
+      console.log(res.data);
+      
+      setFormReview(initialData)
+      setErrorMsg("")      
+      handleClose()
+    })
+    .catch(err => {      
+      console.log(err);
+      setErrorMsg("Errore durante l'invio della recensione");        
+    })
+    .finally(()=>{
+      fetchImmobile(immobile.id)
+    })
+  };
+
+  const handleSetValue = (e) => {
+    const { value, name } = e.target;
+    setFormReview((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
     <div className="container">
       <form action="#" onSubmit={handleSubmit}>
         <div className="mt-3 mb-3">
-          <label htmlFor="name">Nome e Cognome</label>
+          <label htmlFor="username">Nome e Cognome</label>
           <input
             type="text"
             className="form-control"
-            name="name"
+            name="username"
             placeholder="Inserisci il tuo nome di battesimo"
-            value={formReview.name}
-            onChange={hadleSetValue}
+            value={formReview.username}
+            onChange={handleSetValue}
           />
         </div>
         <div className="my-3">
-          <label htmlFor="vote">Voto</label>
-          <input
-            type="number"
-            className="form-control"
-            name="vote"
-            placeholder="Dai un voto da 1 a 5 al tuo pernottamento"
-            value={formReview.vote}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div className="my-3">
-          <label htmlFor="valutazione">Valutazione</label>
+          <label htmlFor="valutazione">Voto</label>
           <input
             type="number"
             className="form-control"
             name="valutazione"
             min={1}
             max={5}
-            placeholder="Inserisci il numero di cuoricini"
+            placeholder="Dai un voto da 1 a 5 al tuo pernottamento"
             value={formReview.valutazione}
-            onChange={hadleSetValue}
+            onChange={handleSetValue}
           />
-        </div>
+        </div>        
         <div className="my-3">
           <label htmlFor="gg_permanenza">Giorni di permanenza</label>
           <input
@@ -66,13 +91,23 @@ const FormReview = ({ handleClose }) => {
             name="gg_permanenza"
             placeholder="Inserisci il numero di giorni in cui sei stato ospite"
             value={formReview.gg_permanenza}
-            onChange={hadleSetValue}
+            onChange={handleSetValue}
           />
         </div>
+        <div>
+          <label htmlFor="testo">Raccontaci la tua esperienza</label>
+          <textarea 
+          type="text"
+          className="form-control"
+          name="testo"
+          placeholder="Raccontaci la tua esperienza"
+          value={formReview.testo}
+          onChange={handleSetValue} />            
+        </div>
+        {errorMsg && <div className="text-danger mt-2">{errorMsg}</div>}
         <button
           type="submit"
-          className="btn btn-lg w-50 btn-primary my-3"
-          onClick={handleClose}
+          className="btn btn-lg w-50 btn-primary my-3"          
         >
           Invia
         </button>

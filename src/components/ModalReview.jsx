@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FormReview from "./FormReview";
 
-const ModalReview = () => {
+const ModalReview = ({ immobile }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => setShowModal(false);
@@ -43,7 +43,7 @@ const ModalReview = () => {
               </div>
               <div className="modal-body">
                 {" "}
-                <FormReview handleClose={handleClose} />
+                <FormReview handleClose={handleClose} immobile={immobile} />
               </div>
             </div>
           </div>
