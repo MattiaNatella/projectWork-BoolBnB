@@ -1,8 +1,7 @@
 import Social from "../partials/Social";
 const Footer = () => {
   return (
-
-    <div className="container">
+    <div className="container pt-3">
       <div className="row row-cols-6 justify-content-center">
         <div className="col">
           <h5 className="border-bottom">Link Utili</h5>
@@ -36,15 +35,15 @@ const Footer = () => {
 
       <div className="row mt-3">
         <div className="col-12 text-center">
-          <p>Seguici sui nostri social!<Social /> </p>
-          <p>&copy; {new Date().getFullYear()} BoolBnB.</p>
-
+          <div>
+            <p>Seguici sui nostri social!</p>
+            <Social />
+          </div>
+          <p>&copy; {new Date().getFullYear()} BoolBnB</p>
         </div>
       </div>
     </div>
-
   );
 };
-
 
 export default Footer;

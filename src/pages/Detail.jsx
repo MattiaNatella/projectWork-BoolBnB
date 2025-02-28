@@ -33,7 +33,10 @@ const Detail = () => {
             <div className="d-flex justify-content-between mb-3">
               <h3>{immobile?.descrizione_immobile}</h3>
               <span className="fs-4">
-                <Rating valutazione={immobile?.media_valutazione} />
+                <Rating
+                  valutazione={immobile?.media_valutazione}
+                  colore={"text-warning"}
+                />
               </span>
             </div>
             <p className="fw-bolder fs-5">€ {immobile?.prezzo_notte} / notte</p>

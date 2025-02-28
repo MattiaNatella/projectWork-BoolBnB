@@ -1,25 +1,24 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
-const Rating = ({ valutazione }) =>{
-
+const Rating = ({ valutazione, colore }) => {
   const starStamp = () => {
-    
-    
-    const stars = []
-    for(let i = 0; i < 5; i++){
-      stars.push(<i key={i} className={`bi bi-star${i < valutazione ? '-fill' : ''}`}></i>)
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <i
+          key={i}
+          className={`bi bi-star${i < valutazione ? "-fill" : ""}`}
+        ></i>
+      );
     }
     return stars;
-    }
-  
-  return (
-    <span className="">{starStamp()}</span>
-  )
+  };
 
-}
+  return <span className={colore}>{starStamp()}</span>;
+};
 
 Rating.propTypes = {
-  vote: PropTypes.number.isRequired
-}
+  vote: PropTypes.number.isRequired,
+};
 
-export default Rating
+export default Rating;
