@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
+import styled from "styled-components";
+import UploadFile from "../partials/UploadFile";
+import Button from "../partials/Button";
 
 const NewHouse = () => {
   const { tipologie, fetchTipologie } = useGlobalContext();
@@ -67,7 +70,7 @@ const NewHouse = () => {
       setError(
         "Controlla bene i dati, potrebbe esserci qualche errore, ricordati i dati sono obbligatori"
       );
-      return;
+      return error;
     }
     setFormData(initialData);
   };
@@ -76,155 +79,198 @@ const NewHouse = () => {
     fetchTipologie();
   }, []);
 
+  console.log(error);
+
   return (
-    <div className="container">
-      <form action="#" onSubmit={handleSubmit}>
-        <div className="mt-5 mb-3">
-          <h4 className="mb-3">Inserisci i tuoi dati</h4>
-          <label htmlFor="nome">Nome</label>
-          <input
-            type="text"
-            className="form-control"
-            name="nome"
-            placeholder="Inserisci il tuo nome"
-            value={formData.proprietario.nome}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div className="my-3">
-          <label htmlFor="cognome">Cognome</label>
-          <input
-            type="text"
-            className="form-control"
-            name="cognome"
-            placeholder="Inserisci il tuo cognome"
-            value={formData.proprietario.cognome}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div className="my-3">
-          <label htmlFor="email">E-mail</label>
-          <input
-            type="text"
-            className="form-control"
-            name="email"
-            placeholder="Inserisci la tua E-mail"
-            value={formData.proprietario.email}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div className="my-3 mb-5">
-          <label htmlFor="telefono">Numero di telefono</label>
-          <input
-            type="tel"
-            className="form-control"
-            name="telefono"
-            placeholder="Inserisci il tuo numero"
-            value={formData.proprietario.telefono}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div className="my-3">
-          <h4 className="mb-3">Inserisci i dati dell'annuncio</h4>
-          <label htmlFor="descrizione_immobile">Nome dell'annuncio</label>
-          <input
-            type="text"
-            className="form-control"
-            name="descrizione_immobile"
-            placeholder="Inserisci il nome dell'annuncio"
-            value={formData.descrizione_immobile}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div className="my-3">
-          <label htmlFor="stanze">Numero di stanze</label>
-          <input
-            type="number"
-            className="form-control"
-            name="stanze"
-            placeholder="Inserisci il numero di stanze"
-            value={formData.stanze}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div className="my-3">
-          <label htmlFor="bagni">Numero di bagni</label>
-          <input
-            type="number"
-            className="form-control"
-            name="bagni"
-            placeholder="Inserisci il numero di bagni"
-            value={formData.bagni}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div className="my-3">
-          <label htmlFor="letti">Numero di letti</label>
-          <input
-            type="number"
-            className="form-control"
-            name="letti"
-            placeholder="Inserisci il numero di letti"
-            value={formData.letti}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div className="my-3">
-          <label htmlFor="metri_quadrati">Metri quadrati</label>
-          <input
-            type="number"
-            className="form-control"
-            name="metri_quadrati"
-            placeholder="Inserisci i metri quadrati"
-            value={formData.metri_quadrati}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div className="my-3">
-          <label htmlFor="indirizzo">Indirizzo</label>
-          <input
-            type="text"
-            className="form-control"
-            name="indirizzo"
-            placeholder="Inserisci l'indirizzo dell'immobile"
-            value={formData.indirizzo}
-            onChange={hadleSetValue}
-          />
-        </div>
-        <div>
-          <select
-            className="form-select my-2"
-            aria-label="Default select example"
-            onChange={hadleSetValue}
-            name="tipologia"
-            value={formData.tipologia}
-          >
-            <option value="">Seleziona la tipologia</option>
-            {tipologie?.map((tipologia) => (
-              <option key={tipologia?.id} value={tipologia?.id}>
-                {tipologia?.descrizione}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="my-3">
-          <label htmlFor="immagine">Immagine</label>
-          <input
-            type="file"
-            className="form-control"
-            name="immagine"
-            onChange={hadleSetValue}
-          />
-        </div>
-        <h5 className="text-center text-danger">{error}</h5>
-        <div className="d-flex justify-content-center my-5">
-          <button type="submit" className="btn btn-lg w-50 btn-primary">
-            Invia
-          </button>
-        </div>
-      </form>
-    </div>
+    <StyledWrapper>
+      <div className="container">
+        <form action="#" onSubmit={handleSubmit}>
+          <div className="pt-5 pb-3">
+            <h4 className="mb-4">Inserisci i tuoi dati</h4>
+            <div className="d-flex justify-content-around mb-3">
+              <label htmlFor="nome">Nome</label>
+              <label htmlFor="cognome" className="ps-5">
+                Cognome
+              </label>
+            </div>
+            <div className="d-flex gap-5 justify-content-between">
+              <input
+                type="text"
+                className="form-control input w-50"
+                name="nome"
+                placeholder="Inserisci il tuo nome"
+                value={formData.proprietario.nome}
+                onChange={hadleSetValue}
+              />
+              <input
+                type="text"
+                className="form-control input w-50 "
+                name="cognome"
+                placeholder="Inserisci il tuo cognome"
+                value={formData.proprietario.cognome}
+                onChange={hadleSetValue}
+              />
+            </div>
+          </div>
+          <div className="d-flex justify-content-around mt-4 mb-3">
+            <label htmlFor="email">Email</label>
+            <label htmlFor="telefono" className="ps-5">
+              Telefono
+            </label>
+          </div>
+          <div className="d-flex gap-5 justify-content-between">
+            <input
+              type="email"
+              className="form-control input w-50"
+              name="email"
+              placeholder="Inserisci la tua email"
+              value={formData.proprietario.email}
+              onChange={hadleSetValue}
+            />
+            <input
+              type="tel"
+              className="form-control input w-50"
+              name="telefono"
+              placeholder="Inserisci il tuo numero di telefono"
+              value={formData.proprietario.telefono}
+              onChange={hadleSetValue}
+            />
+          </div>
+
+          <div className="pt-5 pb-3">
+            <h4 className="mb-4">Inserisci i dati dell'annuncio</h4>
+            <div className="d-flex justify-content-around mb-3">
+              <label htmlFor="descrizione_immobile" className="pe-5 me-5">
+                Nome dell'annuncio
+              </label>
+              <label htmlFor="indirizzo" className="pe-5">
+                Indirizzo
+              </label>
+            </div>
+            <div className="d-flex justify-content-around gap-5">
+              <input
+                type="text"
+                className="form-control input w-50"
+                name="descrizione_immobile"
+                placeholder="Inserisci il nome dell'annuncio"
+                value={formData.descrizione_immobile}
+                onChange={hadleSetValue}
+              />
+              <input
+                type="text"
+                className="form-control input w-50"
+                name="indirizzo"
+                placeholder="Inserisci l'indirizzo dell'immobile"
+                value={formData.indirizzo}
+                onChange={hadleSetValue}
+              />
+            </div>
+
+            <div className="d-flex justify-content-around mt-5 mb-3">
+              <label htmlFor="stanze" className="pe-5 me-5">
+                Numero di stanze
+              </label>
+              <label htmlFor="bagni" className="pe-5 me-5">
+                Numero di bagni
+              </label>
+              <label htmlFor="letti" className="pe-4">
+                Numero di letti
+              </label>
+            </div>
+
+            <div className="d-flex justify-content-between gap-5">
+              <input
+                type="number"
+                className="form-control input w-30"
+                name="stanze"
+                placeholder="Inserisci il numero di stanze"
+                value={formData.stanze}
+                onChange={hadleSetValue}
+              />
+              <input
+                type="number"
+                className="form-control input w-30"
+                name="bagni"
+                placeholder="Inserisci il numero di bagni"
+                value={formData.bagni}
+                onChange={hadleSetValue}
+              />
+              <input
+                type="number"
+                className="form-control input w-30"
+                name="letti"
+                placeholder="Inserisci il numero di letti"
+                value={formData.letti}
+                onChange={hadleSetValue}
+              />
+            </div>
+
+            <div className="d-flex justify-content-around mt-5 mb-3">
+              <label htmlFor="metri_quadrati" className="pe-5 me-5">
+                Metri quadrati
+              </label>
+              <label htmlFor="tipologia" className="pe-5 me-5">
+                Tipologia
+              </label>
+              <label htmlFor="immagine" className="pe-4">
+                Immagine
+              </label>
+            </div>
+
+            <div className="d-flex justify-content-between gap-5">
+              <input
+                type="number"
+                className="form-control input w-30"
+                name="metri_quadrati"
+                placeholder="Inserisci i metri quadrati"
+                value={formData.metri_quadrati}
+                onChange={hadleSetValue}
+              />
+              <select
+                className="form-select input w-30"
+                aria-label="Default select example"
+                onChange={hadleSetValue}
+                name="tipologia"
+                value={formData.tipologia}
+              >
+                <option value="">Seleziona la tipologia</option>
+                {tipologie?.map((tipologia) => (
+                  <option key={tipologia?.id} value={tipologia?.id}>
+                    {tipologia?.descrizione}
+                  </option>
+                ))}
+              </select>
+              <UploadFile onchange={hadleSetValue} />
+            </div>
+            <h5 className="text-center text-wine mt-4">{error}</h5>
+            <div className="d-flex justify-content-center my-5">
+              <Button text={"Invia"} type={"submit"} />
+            </div>
+          </div>
+        </form>
+      </div>
+    </StyledWrapper>
   );
 };
 
+const StyledWrapper = styled.div`
+.input {
+    display: block;
+    color: rgb(34, 34, 34);
+    background: linear-gradient(
+      142.99deg,
+      rgba(217, 217, 217, 0.63) 15.53%,
+      rgba(243, 243, 243, 0.63) 88.19%
+    );
+    box-shadow: 0px 12px 24px -1px rgba(0, 0, 0, 0.18);
+    border-color: rgba(7, 4, 14, 0);
+    border-radius: 50px;
+    margin: 0px, auto;
+    padding: 22px 15px;
+    outline: none;
+    text-align: center;
+%;
+    transition: 0.5s;
+  }
+`;
 export default NewHouse;
