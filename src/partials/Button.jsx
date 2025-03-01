@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Button = ({ text, error, link, onclick }) => {
+const Button = ({ text, error, link, onclick, type }) => {
   return (
     <StyledWrapper>
       <Link
         to={error ? "#" : link}
         className={` btn button ms-2 ${error ? "disabled" : ""}`}
         onClick={onclick || ""}
+        type={type || ""}
       >
         <div className="d-flex justify-content-between align-items-center gap-2">
           <span className="d-none d-sm-flex">{text}</span>

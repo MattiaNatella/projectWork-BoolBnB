@@ -4,7 +4,6 @@ import Hearts from "../components/Hearts";
 import { useState } from "react";
 
 const NewCard = ({ immobile }) => {
-
   const [cuoricini, setCuoricini] = useState(immobile.voto);
 
   return (
@@ -14,14 +13,20 @@ const NewCard = ({ immobile }) => {
           src={immobile.immagine}
           className="csm-image"
           alt={immobile.descrizione_immobile}
-
         />
-        <div className=" cardoverlay-top w-100 d-flex justify-content-between py-3 px-2" >
-          <span className="desctag border rounded bg-light p-1 text-wine fw-bold">{immobile.descrizione_immobile}</span>
-          <i className="fa-solid fa-heart text-danger p-1 border rounded bg-light rounded-">&nbsp; &nbsp;{cuoricini}</i>
+        <div className=" cardoverlay-top w-100 d-flex justify-content-between py-3 px-2">
+          <span className="desctag border rounded bg-light p-1 text-wine fw-bold">
+            {immobile.descrizione_immobile}
+          </span>
+          <i className="fa-solid fa-heart text-danger p-1 border rounded bg-light rounded-">
+            &nbsp; &nbsp;{cuoricini}
+          </i>
         </div>
-        <div className="cardoverlay-bottom py-3 px-2 "><span className="border rounded bg-light  text-wine fw-bold p-1 px-2">{immobile.indirizzo}</span></div>
-
+        <div className="cardoverlay-bottom py-3 px-2 ">
+          <span className="border rounded bg-light  text-wine fw-bold p-1 px-2">
+            {immobile.indirizzo}
+          </span>
+        </div>
 
         <div className="card__content">
           <p className="card__title">{immobile.descrizione_immobile}</p>
@@ -43,9 +48,13 @@ const NewCard = ({ immobile }) => {
             <span className="fw-bolder">Recensioni: </span>
             {immobile.num_recensioni}
           </p>
-          <div className="mt-3 d-flex justify-content-around">
+          <div className="d-flex justify-content-around mt-sm-5 mt-md-5 mt-lg-3">
             <CardButton immobile={immobile} />
-            <Hearts immobile={immobile} cuoricini={cuoricini} setCuoricini={setCuoricini} />
+            <Hearts
+              immobile={immobile}
+              cuoricini={cuoricini}
+              setCuoricini={setCuoricini}
+            />
           </div>
         </div>
       </div>

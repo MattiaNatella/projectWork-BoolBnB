@@ -30,7 +30,7 @@ const Detail = () => {
             alt="immagine immobile"
           />
           <div className="p-3 csm-border rounded-end-5">
-            <div className="d-flex justify-content-between mb-3">
+            <div className="d-sm-block d-lg-flex justify-content-between mb-3">
               <h3>{immobile?.descrizione_immobile}</h3>
               <span className="fs-4">
                 <Rating
