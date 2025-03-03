@@ -101,7 +101,7 @@ const NewHouse = () => {
     <StyledWrapper>
       <div className="container">
         <form action="#">
-          <div className="pt-5 pb-3">
+          <div className="pt-5 pb-3 col-12">
             <h4 className="mb-4">Inserisci i tuoi dati</h4>
             <div className="d-flex justify-content-around mb-3">
               <label htmlFor="nome">Nome</label>
@@ -109,7 +109,7 @@ const NewHouse = () => {
                 Cognome
               </label>
             </div>
-            <div className="d-flex gap-5 justify-content-between">
+            <div className="d-flex gap-5 justify-content-between col-12">
               <input
                 type="text"
                 className="form-control input w-50"
@@ -176,7 +176,7 @@ const NewHouse = () => {
               />
             </div>
 
-            <div className="d-flex justify-content-between mt-5 mb-3 text-center">
+            <div className="d-flex flex-column flex-sm-row justify-content-md-between mt-5 mb-3 text-center">
               <div>
                 <label htmlFor="stanze" className="mb-3">
                   Numero di stanze
@@ -239,13 +239,13 @@ const NewHouse = () => {
               </div>
             </div>
 
-            <div className="d-flex justify-content-between gap-5 text-center mt-5">
-              <div className="col-6 pe-2">
+            <div className="d-flex flex-column flex-sm-row justify-content-md-between mt-5 gap-sm-4 text-center">
+              <div className="col-sm-6">
                 <label htmlFor="tipologia" className="mb-3">
                   Tipologia
                 </label>
                 <select
-                  className="form-select input"
+                  className="form-select input tipologia"
                   aria-label="Default select example"
                   onChange={handleSetValue}
                   name="tipologia"
@@ -259,7 +259,7 @@ const NewHouse = () => {
                   ))}
                 </select>
               </div>
-              <div className="col-6 ps-5">
+              <div className="col-sm-6">
                 <label htmlFor="immagine" className="mb-3">
                   Immagine
                 </label>
@@ -287,6 +287,7 @@ const StyledWrapper = styled.div`
       rgba(217, 217, 217, 0.63) 15.53%,
       rgba(243, 243, 243, 0.63) 88.19%
     );
+    
     box-shadow: 0px 12px 24px -1px rgba(0, 0, 0, 0.18);
     border-color: rgba(7, 4, 14, 0);
     border-radius: 50px;
@@ -297,5 +298,13 @@ const StyledWrapper = styled.div`
 %;
     transition: 0.5s;
   }
+  .tipologia{
+  width: 96.5%;
+  }
+  @media screen and (max-width: 575px){
+  .tipologia{
+    width: 100%;
+  }  
+}
 `;
 export default NewHouse;

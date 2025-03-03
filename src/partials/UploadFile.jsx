@@ -48,7 +48,7 @@ const StyledWrapper = styled.div`
   /* From Uiverse.io by Yaya12085 */
   .custum-file-upload {
     height: 70px;
-    width: 100%;
+    width: 96.5%;
     display: flex;
     flex-direction: column;
     align-items: space-between;
@@ -61,6 +61,7 @@ const StyledWrapper = styled.div`
     border-radius: 50px;
     box-shadow: 0px 12px 24px -1px rgba(0, 0, 0, 0.18);
   }
+
 
   .custum-file-upload .icon {
     display: flex;
@@ -87,6 +88,11 @@ const StyledWrapper = styled.div`
   .custum-file-upload input {
     display: none;
   }
+    @media screen and (max-width: 575px){
+  .custum-file-upload{
+    width: 100%;
+    margin-top: 1rem;
+  } 
 `;
 
 export default UploadFile;

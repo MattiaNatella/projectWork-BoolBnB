@@ -2,7 +2,7 @@ import Social from "../partials/Social";
 const Footer = () => {
   return (
     <div className="container pt-3">
-      <div className="row row-cols-6 justify-content-center">
+      <div className="row row-cols-sm-6 justify-content-center">
         <div className="col">
           <h5 className="border-bottom">Link Utili</h5>
           <ul className="list-unstyled">
