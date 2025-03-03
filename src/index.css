@@ -86,3 +86,7 @@ footer {
     color: whitesmoke;
   }
 }
+
+.img-immobile {
+  object-fit: fill;
+}

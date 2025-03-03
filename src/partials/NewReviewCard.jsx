@@ -27,10 +27,11 @@ const NewReviewCard = ({ review }) => {
 };
 
 const StyledWrapper = styled.div`
+width; 100%;
   margin-top: 2.5rem;
   .card-review {
-    width: 190px;
-    height: 260px;
+    width: 11.875rem;
+    height: 16.25rem;
     background: #f5f5f5;
     overflow: visible;
     box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.1);

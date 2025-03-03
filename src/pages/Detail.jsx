@@ -25,7 +25,7 @@ const Detail = () => {
         <div className="container-top rounded-5 d-flex">
           <img
             src={immobile?.immagine}
-            className="w-50 csm-image rounded-start-5"
+            className="img-immobile w-50 csm-image rounded-start-5"
             alt="immagine immobile"
           />
           <div className="p-3 csm-border rounded-end-5">
@@ -70,8 +70,8 @@ const Detail = () => {
               <ModalReview immobile={immobile} />
             </span>{" "}
           </h3>
-          <div className="recensioni mt-5">
-            <div className="row row-cols-sm-1 row-cols-md-3 row-cols-lg-6">
+          <div className="recensioni justify-content-center mt-5">
+            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
               {checkReviews()}
             </div>
           </div>
