@@ -2,7 +2,7 @@ import styled from "styled-components";
 const FAQ = () => {
   return (
     <StyledWrapper>
-      <div className="container mt-5">
+      <div className="container pt-5">
         <h1 className="title">Domande Frequenti</h1>
         <div className="faq-item">
           <h2 className="question">Come posso prenotare una proprietà?</h2>

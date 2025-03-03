@@ -70,8 +70,8 @@ const StyledWrapper = styled.div`
     position: relative;
     cursor: pointer;
     display: flex;
-    height: 50px;
-    width: 136px;
+    height: 2rem;
+    width: 8rem;
     border-radius: 50px;
     border: 2px solid #5b2333;
     background-color: #f7f4f3;

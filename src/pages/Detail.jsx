@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 import { useParams } from "react-router-dom";
 import ModalReview from "../components/ModalReview";
-import ReviewCard from "../components/Reviews";
 import NewReviewCard from "../partials/NewReviewCard";
 import Rating from "../components/Rating";
 

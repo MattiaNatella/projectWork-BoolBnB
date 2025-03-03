@@ -48,13 +48,18 @@ const NewCard = ({ immobile }) => {
             <span className="fw-bolder">Recensioni: </span>
             {immobile.num_recensioni}
           </p>
-          <div className="d-flex justify-content-around mt-sm-5 mt-md-5 mt-lg-3">
-            <CardButton immobile={immobile} />
-            <Hearts
-              immobile={immobile}
-              cuoricini={cuoricini}
-              setCuoricini={setCuoricini}
-            />
+          <div className="buttons d-flex justify-content-around">
+            <div>
+              <CardButton immobile={immobile} />
+            </div>
+            <div>
+              <Hearts
+                immobile={immobile}
+                cuoricini={cuoricini}
+                setCuoricini={setCuoricini}
+              />
+            </div>
+
           </div>
         </div>
       </div>
@@ -72,14 +77,19 @@ const StyledWrapper = styled.div`
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    perspective: 1000px;
+    perspective: 62.5rem;
     box-shadow: 0 0 0 5px #ffffff80;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     margin-bottom: 20px;
   }
 
+.buttons {
+position: relative;
+top: 20%;
+}
+
   .csm-card svg {
-    width: 48px;
+    width: 3rem;
     fill: #333;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
@@ -95,7 +105,7 @@ const StyledWrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 1.25rem;
     box-sizing: border-box;
     background-color: #f2f2f2;
     transform: rotateX(-90deg);
@@ -109,14 +119,14 @@ const StyledWrapper = styled.div`
 
   .card__title {
     margin: 0;
-    font-size: 24px;
+  font-size: 0.9rem;
     color: #333;
     font-weight: 700;
   }
 
   .card__description {
-    margin: 10px 0 0;
-    font-size: 14px;
+    margin: 0.5rem 0 0;
+font-size: 0.8rem;
     color: #777;
     line-height: 1.4;
   }`;

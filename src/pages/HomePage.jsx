@@ -19,7 +19,7 @@ const HomePage = () => {
         <div className="d-flex justify-content-center">
           <Searchbar />
         </div>
-        <div className="row row-cols-lg-3 mb-5">
+        <div className="row row-cols-lg-2 row-cols-xl-3 mb-5">
           {immobili.map((immobile) => (
             <div key={immobile.id}>
               <NewCard immobile={immobile} />
