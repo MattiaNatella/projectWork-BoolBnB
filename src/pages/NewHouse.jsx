@@ -33,6 +33,7 @@ const NewHouse = () => {
   const validate = () => {
     if (
       !formData.descrizione_immobile ||
+      formData.descrizione_immobile.length > 50 ||
       !formData.tipologia ||
       !formData.immagine ||
       !formData.stanze ||
