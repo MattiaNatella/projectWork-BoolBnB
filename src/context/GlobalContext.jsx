@@ -85,6 +85,7 @@ const GlobalProvider = ({ children }) => {
     searchTerm,
     handleAdvancedSearch,
     tipologie,
+    api_url,
     fetchTipologie
   };
 

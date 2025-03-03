@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext";
 import styled from "styled-components";
 import UploadFile from "../partials/UploadFile";
 import Button from "../partials/Button";
+import axios from "axios";
 
 const NewHouse = () => {
-  const { tipologie, fetchTipologie } = useGlobalContext();
+  const { tipologie, fetchTipologie, api_url } = useGlobalContext();
+  const navigate = useNavigate();
 
   const initialData = {
     proprietario: {
@@ -46,7 +49,9 @@ const NewHouse = () => {
     return true;
   };
 
-  const hadleSetValue = (e) => {
+  const handleSetValue = (e) => {
+
+
     const { value, name } = e.target;
 
     if (name in formData.proprietario) {
@@ -66,25 +71,35 @@ const NewHouse = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!validate()) {
       setError(
         "Controlla bene i dati, potrebbe esserci qualche errore, ricordati i dati sono obbligatori"
       );
       return error;
     }
-    setFormData(initialData);
+
+    console.log(formData)
+
+    //eseguo chiamata di tipo POST all'api URL
+    axios.post(api_url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+      .then(res => {
+        console.log(res)
+
+      })
+      .catch(err => console.log(err))
   };
 
   useEffect(() => {
     fetchTipologie();
   }, []);
 
-  console.log(error);
+
 
   return (
     <StyledWrapper>
       <div className="container">
-        <form action="#" onSubmit={handleSubmit}>
+        <form action="#">
           <div className="pt-5 pb-3">
             <h4 className="mb-4">Inserisci i tuoi dati</h4>
             <div className="d-flex justify-content-around mb-3">
@@ -100,7 +115,7 @@ const NewHouse = () => {
                 name="nome"
                 placeholder="Inserisci il tuo nome"
                 value={formData.proprietario.nome}
-                onChange={hadleSetValue}
+                onChange={handleSetValue}
               />
               <input
                 type="text"
@@ -108,7 +123,7 @@ const NewHouse = () => {
                 name="cognome"
                 placeholder="Inserisci il tuo cognome"
                 value={formData.proprietario.cognome}
-                onChange={hadleSetValue}
+                onChange={handleSetValue}
               />
             </div>
           </div>
@@ -125,7 +140,7 @@ const NewHouse = () => {
               name="email"
               placeholder="Inserisci la tua email"
               value={formData.proprietario.email}
-              onChange={hadleSetValue}
+              onChange={handleSetValue}
             />
             <input
               type="tel"
@@ -133,7 +148,7 @@ const NewHouse = () => {
               name="telefono"
               placeholder="Inserisci il tuo numero di telefono"
               value={formData.proprietario.telefono}
-              onChange={hadleSetValue}
+              onChange={handleSetValue}
             />
           </div>
 
@@ -154,7 +169,7 @@ const NewHouse = () => {
                 name="descrizione_immobile"
                 placeholder="Inserisci il nome dell'annuncio"
                 value={formData.descrizione_immobile}
-                onChange={hadleSetValue}
+                onChange={handleSetValue}
               />
               <input
                 type="text"
@@ -162,7 +177,7 @@ const NewHouse = () => {
                 name="indirizzo"
                 placeholder="Inserisci l'indirizzo dell'immobile"
                 value={formData.indirizzo}
-                onChange={hadleSetValue}
+                onChange={handleSetValue}
               />
             </div>
 
@@ -185,7 +200,7 @@ const NewHouse = () => {
                 name="stanze"
                 placeholder="Inserisci il numero di stanze"
                 value={formData.stanze}
-                onChange={hadleSetValue}
+                onChange={handleSetValue}
               />
               <input
                 type="number"
@@ -193,7 +208,7 @@ const NewHouse = () => {
                 name="bagni"
                 placeholder="Inserisci il numero di bagni"
                 value={formData.bagni}
-                onChange={hadleSetValue}
+                onChange={handleSetValue}
               />
               <input
                 type="number"
@@ -201,7 +216,7 @@ const NewHouse = () => {
                 name="letti"
                 placeholder="Inserisci il numero di letti"
                 value={formData.letti}
-                onChange={hadleSetValue}
+                onChange={handleSetValue}
               />
             </div>
 
@@ -224,27 +239,27 @@ const NewHouse = () => {
                 name="metri_quadrati"
                 placeholder="Inserisci i metri quadrati"
                 value={formData.metri_quadrati}
-                onChange={hadleSetValue}
+                onChange={handleSetValue}
               />
               <select
                 className="form-select input w-30"
                 aria-label="Default select example"
-                onChange={hadleSetValue}
+                onChange={handleSetValue}
                 name="tipologia"
                 value={formData.tipologia}
               >
                 <option value="">Seleziona la tipologia</option>
                 {tipologie?.map((tipologia) => (
-                  <option key={tipologia?.id} value={tipologia?.id}>
+                  <option key={tipologia?.id} value={parseInt(tipologia?.id)}>
                     {tipologia?.descrizione}
                   </option>
                 ))}
               </select>
-              <UploadFile onchange={hadleSetValue} />
+              <UploadFile handleSetValue={handleSetValue} />
             </div>
             <h5 className="text-center text-wine mt-4">{error}</h5>
             <div className="d-flex justify-content-center my-5">
-              <Button text={"Invia"} type={"submit"} />
+              <Button text={"Invia"} type={"submit"} onclick={handleSubmit} />
             </div>
           </div>
         </form>

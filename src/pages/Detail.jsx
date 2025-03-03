@@ -23,7 +23,7 @@ const Detail = () => {
   return (
     <>
       <div className="container py-5">
-        <div className="container-top rounded-5 d-flex justify-content-between  ">
+        <div className="container-top rounded-5 d-flex">
           <img
             src={immobile?.immagine}
             className="w-50 csm-image rounded-start-5"
