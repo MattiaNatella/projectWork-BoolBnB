@@ -25,6 +25,7 @@ const NewHouse = () => {
     indirizzo: "",
     immagine: "",
     tipologia: 0,
+    prezzo: "",
   };
 
   const [formData, setFormData] = useState(initialData);
@@ -43,15 +44,14 @@ const NewHouse = () => {
       !formData.proprietario.nome ||
       !formData.proprietario.cognome ||
       !formData.proprietario.email ||
-      !formData.proprietario.telefono
+      !formData.proprietario.telefono ||
+      !formData.prezzo
     )
       return false;
     return true;
   };
 
   const handleSetValue = (e) => {
-
-
     const { value, name } = e.target;
 
     if (name in formData.proprietario) {
@@ -79,22 +79,22 @@ const NewHouse = () => {
       return error;
     }
 
-    console.log(formData)
+    console.log(formData);
 
     //eseguo chiamata di tipo POST all'api URL
-    axios.post(api_url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })
-      .then(res => {
-        console.log(res)
-
+    axios
+      .post(api_url, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
       })
-      .catch(err => console.log(err))
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     fetchTipologie();
   }, []);
-
-
 
   return (
     <StyledWrapper>
@@ -113,7 +113,6 @@ const NewHouse = () => {
                 type="text"
                 className="form-control input w-50"
                 name="nome"
-                placeholder="Inserisci il tuo nome"
                 value={formData.proprietario.nome}
                 onChange={handleSetValue}
               />
@@ -121,7 +120,6 @@ const NewHouse = () => {
                 type="text"
                 className="form-control input w-50 "
                 name="cognome"
-                placeholder="Inserisci il tuo cognome"
                 value={formData.proprietario.cognome}
                 onChange={handleSetValue}
               />
@@ -138,7 +136,6 @@ const NewHouse = () => {
               type="email"
               className="form-control input w-50"
               name="email"
-              placeholder="Inserisci la tua email"
               value={formData.proprietario.email}
               onChange={handleSetValue}
             />
@@ -146,7 +143,6 @@ const NewHouse = () => {
               type="tel"
               className="form-control input w-50"
               name="telefono"
-              placeholder="Inserisci il tuo numero di telefono"
               value={formData.proprietario.telefono}
               onChange={handleSetValue}
             />
@@ -167,7 +163,6 @@ const NewHouse = () => {
                 type="text"
                 className="form-control input w-50"
                 name="descrizione_immobile"
-                placeholder="Inserisci il nome dell'annuncio"
                 value={formData.descrizione_immobile}
                 onChange={handleSetValue}
               />
@@ -175,88 +170,102 @@ const NewHouse = () => {
                 type="text"
                 className="form-control input w-50"
                 name="indirizzo"
-                placeholder="Inserisci l'indirizzo dell'immobile"
                 value={formData.indirizzo}
                 onChange={handleSetValue}
               />
             </div>
 
-            <div className="d-flex justify-content-around mt-5 mb-3">
-              <label htmlFor="stanze" className="pe-5 me-5">
-                Numero di stanze
-              </label>
-              <label htmlFor="bagni" className="pe-5 me-5">
-                Numero di bagni
-              </label>
-              <label htmlFor="letti" className="pe-4">
-                Numero di letti
-              </label>
+            <div className="d-flex justify-content-between mt-5 mb-3 text-center">
+              <div>
+                <label htmlFor="stanze" className="mb-3">
+                  Numero di stanze
+                </label>
+                <input
+                  type="number"
+                  className="form-control input"
+                  name="stanze"
+                  value={formData.stanze}
+                  onChange={handleSetValue}
+                />
+              </div>
+              <div>
+                <label htmlFor="bagni" className="mb-3">
+                  Numero di bagni
+                </label>
+                <input
+                  type="number"
+                  className="form-control input"
+                  name="bagni"
+                  value={formData.bagni}
+                  onChange={handleSetValue}
+                />
+              </div>
+              <div>
+                <label htmlFor="letti" className="mb-3">
+                  Numero di letti
+                </label>
+                <input
+                  type="number"
+                  className="form-control input"
+                  name="letti"
+                  value={formData.letti}
+                  onChange={handleSetValue}
+                />
+              </div>
+              <div>
+                <label htmlFor="metri_quadrati" className="mb-3">
+                  Metri quadrati
+                </label>
+                <input
+                  type="number"
+                  className="form-control input"
+                  name="metri_quadrati"
+                  value={formData.metri_quadrati}
+                  onChange={handleSetValue}
+                />
+              </div>
+              <div>
+                <label htmlFor="prezzo" className="mb-3">
+                  Prezzo
+                </label>
+                <input
+                  type="number"
+                  className="form-control input"
+                  name="prezzo"
+                  value={formData.prezzo}
+                  onChange={handleSetValue}
+                />
+              </div>
             </div>
 
-            <div className="d-flex justify-content-between gap-5">
-              <input
-                type="number"
-                className="form-control input w-30"
-                name="stanze"
-                placeholder="Inserisci il numero di stanze"
-                value={formData.stanze}
-                onChange={handleSetValue}
-              />
-              <input
-                type="number"
-                className="form-control input w-30"
-                name="bagni"
-                placeholder="Inserisci il numero di bagni"
-                value={formData.bagni}
-                onChange={handleSetValue}
-              />
-              <input
-                type="number"
-                className="form-control input w-30"
-                name="letti"
-                placeholder="Inserisci il numero di letti"
-                value={formData.letti}
-                onChange={handleSetValue}
-              />
+            <div className="d-flex justify-content-between gap-5 text-center mt-5">
+              <div className="col-6 pe-2">
+                <label htmlFor="tipologia" className="mb-3">
+                  Tipologia
+                </label>
+                <select
+                  className="form-select input"
+                  aria-label="Default select example"
+                  onChange={handleSetValue}
+                  name="tipologia"
+                  value={formData.tipologia}
+                >
+                  <option value=""></option>
+                  {tipologie?.map((tipologia) => (
+                    <option key={tipologia?.id} value={parseInt(tipologia?.id)}>
+                      {tipologia?.descrizione}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="col-6 ps-5">
+                <label htmlFor="immagine" className="mb-3">
+                  Immagine
+                </label>
+                <UploadFile handleSetValue={handleSetValue} />
+              </div>
             </div>
 
-            <div className="d-flex justify-content-around mt-5 mb-3">
-              <label htmlFor="metri_quadrati" className="pe-5 me-5">
-                Metri quadrati
-              </label>
-              <label htmlFor="tipologia" className="pe-5 me-5">
-                Tipologia
-              </label>
-              <label htmlFor="immagine" className="pe-4">
-                Immagine
-              </label>
-            </div>
-
-            <div className="d-flex justify-content-between gap-5">
-              <input
-                type="number"
-                className="form-control input w-30"
-                name="metri_quadrati"
-                placeholder="Inserisci i metri quadrati"
-                value={formData.metri_quadrati}
-                onChange={handleSetValue}
-              />
-              <select
-                className="form-select input w-30"
-                aria-label="Default select example"
-                onChange={handleSetValue}
-                name="tipologia"
-                value={formData.tipologia}
-              >
-                <option value="">Seleziona la tipologia</option>
-                {tipologie?.map((tipologia) => (
-                  <option key={tipologia?.id} value={parseInt(tipologia?.id)}>
-                    {tipologia?.descrizione}
-                  </option>
-                ))}
-              </select>
-              <UploadFile handleSetValue={handleSetValue} />
-            </div>
             <h5 className="text-center text-wine mt-4">{error}</h5>
             <div className="d-flex justify-content-center my-5">
               <Button text={"Invia"} type={"submit"} onclick={handleSubmit} />

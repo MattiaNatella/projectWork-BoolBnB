@@ -2,13 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 const UploadFile = (props) => {
-
-  const { handleSetValue } = props
+  const { handleSetValue } = props;
   return (
     <StyledWrapper>
       <label className="custum-file-upload" htmlFor="immagine">
         <div className="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
             <g strokeWidth={0} id="SVGRepo_bgCarrier" />
             <g
               strokeLinejoin="round"
@@ -45,7 +48,7 @@ const StyledWrapper = styled.div`
   /* From Uiverse.io by Yaya12085 */
   .custum-file-upload {
     height: 70px;
-    width: 390px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: space-between;
@@ -56,7 +59,7 @@ const StyledWrapper = styled.div`
     background-color: rgba(255, 255, 255, 1);
     padding: 1.5rem;
     border-radius: 50px;
-    box-shadow: 0px 48px 35px -48px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 12px 24px -1px rgba(0, 0, 0, 0.18);
   }
 
   .custum-file-upload .icon {
