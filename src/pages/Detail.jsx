@@ -31,7 +31,7 @@ const Detail = () => {
           />
           <div className="p-3 csm-content csm-content">
             <div className="d-sm-block d-lg-flex justify-content-between mb-3">
-              <h3 className="fw-bold text-wine text-uppercase">{immobile?.descrizione_immobile}</h3>
+              <h3 className="fw-bold text-wine text-uppercase fs-4">{immobile?.descrizione_immobile}</h3>
               <span className="fs-4">
                 <Rating
                   valutazione={immobile?.media_valutazione}
