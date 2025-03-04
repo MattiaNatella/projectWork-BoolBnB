@@ -12,6 +12,7 @@ const GlobalProvider = ({ children }) => {
   const [immobile, setImmobile] = useState(null);
   const [tipologie, setTipologie] = useState([])
   const [filteredImmobili, setFilteredImmobili] = useState([])
+  const [advancedFilter, setAdvancedFilter] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
 
   const fetchImmobili = () => {
@@ -37,6 +38,7 @@ const GlobalProvider = ({ children }) => {
       .get(`${api_url_filter}indirizzo=${searchTerm}`)
       .then((res) => {
         setFilteredImmobili(res.data);
+        console.log(res.data)
       })
       .catch((err) => console.log(err));
   };
@@ -63,14 +65,14 @@ const GlobalProvider = ({ children }) => {
   }
 
   const handleAdvancedSearch = ({ stanze, bagni, tipologia }) => {
-
-    const matchFilter = immobili.filter(immobile => {
-      const matchesStanze = stanze ? immobile.stanze == stanze : true;
-      const matchesBagni = bagni ? immobile.bagni == bagni : true;
-      const matchesTipologia = tipologia ? tipologia.toLowerCase().includes(tipologia.toLowerCase()) : true;
+    const matchFilter = filteredImmobili.filter(immobile => {
+      const matchesStanze = stanze ? immobile.stanze >= stanze : true;
+      const matchesBagni = bagni ? immobile.bagni >= bagni : true;
+      const matchesTipologia = tipologia ? immobile.tipologia_id == tipologia : true;
       return matchesStanze && matchesBagni && matchesTipologia;
     })
-    setFilteredImmobili(matchFilter)
+    console.log(matchFilter)
+    setAdvancedFilter(matchFilter)
   }
 
   const value = {
@@ -86,7 +88,8 @@ const GlobalProvider = ({ children }) => {
     handleAdvancedSearch,
     tipologie,
     api_url,
-    fetchTipologie
+    fetchTipologie,
+    advancedFilter
   };
 
   return (

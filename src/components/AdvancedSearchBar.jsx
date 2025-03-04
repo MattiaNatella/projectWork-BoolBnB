@@ -1,6 +1,5 @@
 import { useGlobalContext } from "../context/GlobalContext";
 import { useEffect, useState } from "react";
-import SearchBar from "../partials/SearchBar";
 import styled from "styled-components";
 
 const AdvancedSearchBar = () => {
@@ -17,7 +16,7 @@ const AdvancedSearchBar = () => {
   const [error, setError] = useState("");
 
   const validate = () => {
-    if (!filters.stanze || !filters.bagni || !filters.tipologia) return false;
+    if (!filters.stanze && !filters.bagni && !filters.tipologia) return false;
     return true;
   };
 
@@ -36,82 +35,83 @@ const AdvancedSearchBar = () => {
     }
 
     handleAdvancedSearch(filters);
-    
+
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFilters((prev) => ({ ...prev, [name]: value }));
+    console.log(filters)
     setError("");
   };
 
   return (
     <StyledWrapper>
       <div>
-      <form
-      className="d-flex align-items-center justify-content-between align-items-center gap-3 mt-5" 
-      onSubmit={handleSubmit}>
-        <label htmlFor="tipologia">Tipologia</label>
-        <select
-          className="input2 form-select my-2"
-          aria-label="Default select example"
-          onChange={handleChange}
-          name="tipologia"
-          value={filters.tipologia}
-        >
-          <option className=" text-black">Seleziona la tipologia</option>
-          {Array.isArray(tipologie) &&
-            tipologie?.map((tipologia) => (
-              <option key={tipologia?.id} value={tipologia?.id}>
-                {tipologia?.descrizione}
-              </option>
-            ))}
-        </select>
+        <form
+          className="d-flex align-items-center justify-content-between align-items-center gap-3 mt-5"
+          onSubmit={handleSubmit}>
+          <label htmlFor="tipologia">Tipologia</label>
+          <select
+            className="input2 form-select my-2"
+            aria-label="Default select example"
+            onChange={handleChange}
+            name="tipologia"
+            value={filters.tipologia}
+          >
+            <option className=" text-black">Seleziona la tipologia</option>
+            {Array.isArray(tipologie) &&
+              tipologie?.map((tipologia) => (
+                <option key={tipologia?.id} value={tipologia?.id}>
+                  {tipologia?.descrizione}
+                </option>
+              ))}
+          </select>
 
-        <div className="d-flex align-items-center gap-3">
-          <label htmlFor="stanze">Stanze</label>
-          <input
-            className="input"
-            type="number"
-            placeholder=""
-            aria-label="Search"
-            onChange={handleChange}
-            name="stanze"
-            value={filters.stanze}
-            min={1}
-            max={10}
-          />
-          <label htmlFor="bagni">Bagni</label>
-          <input
-            className="input"
-            type="number"
-            placeholder=""
-            aria-label="Search"
-            onChange={handleChange}
-            name="bagni"
-            value={filters.bagni}
-            min={1}
-            max={10}
-          />
+          <div className="d-flex align-items-center gap-3">
+            <label htmlFor="stanze">Stanze</label>
+            <input
+              className="input"
+              type="number"
+              placeholder=""
+              aria-label="Search"
+              onChange={handleChange}
+              name="stanze"
+              value={filters.stanze}
+              min={1}
+              max={10}
+            />
+            <label htmlFor="bagni">Bagni</label>
+            <input
+              className="input"
+              type="number"
+              placeholder=""
+              aria-label="Search"
+              onChange={handleChange}
+              name="bagni"
+              value={filters.bagni}
+              min={1}
+              max={10}
+            />
+          </div>
+
+
+          <div className="d-flex justify-content-center">
+            <button className="button w-100" type="submit">
+              Cerca
+              <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
+                <path
+                  clipRule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <div className="col-12 text-center mt-3">
+          <h6 className="text-center text-wine mb-3">{error}</h6>
         </div>
-        
-        
-        <div className="d-flex justify-content-center">
-          <button className="button w-100" type="submit">
-            Cerca
-            <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
-              <path
-                clipRule="evenodd"
-                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
-        </div>
-      </form>
-      <div className="col-12 text-center mt-3">
-        <h6 className="text-center text-wine mb-3">{error}</h6>    
-      </div>
       </div>
     </StyledWrapper>
   );

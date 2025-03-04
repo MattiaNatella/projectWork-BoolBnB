@@ -1,4 +1,4 @@
-import Hearts from "../components/Hearts";
+
 import { useGlobalContext } from "../context/GlobalContext";
 import { useEffect } from "react";
 import Searchbar from "../components/Searchbar";
@@ -8,7 +8,9 @@ import AnimatedTextNavbar from "../partials/AnimatedTextNavbar";
 const HomePage = () => {
   const { immobili, fetchImmobili } = useGlobalContext();
 
-  useEffect(fetchImmobili, []);
+  useEffect(() => {
+    fetchImmobili()
+  }, []);
 
   return (
     <div>
