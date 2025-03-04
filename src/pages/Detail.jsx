@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import ModalReview from "../components/ModalReview";
 import NewReviewCard from "../partials/NewReviewCard";
 import Rating from "../components/Rating";
+import DetailButton from "../partials/DetailButton";
 
 const Detail = () => {
   const { fetchImmobile, immobile } = useGlobalContext();
@@ -57,9 +58,10 @@ const Detail = () => {
                 <strong className="fw-bold pe-2">Bagni:</strong>{" "}
                 {immobile?.bagni}
               </p>
-              <a href={`tel:${immobile?.proprietario_telefono}`}>{immobile?.proprietario_telefono}</a> <a href={`mailto:${immobile?.proprietario_email}?subject=Richiesta informazioni su ${immobile?.descrizione_immobile}`}>
-                Contatta {immobile?.proprietario_nome}
-              </a>
+              <div className="d-flex justify-content-end">
+                <DetailButton immobile={immobile} />
+              </div>
+
             </div>
           </div>
         </div>

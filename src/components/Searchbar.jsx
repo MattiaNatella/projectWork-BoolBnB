@@ -8,9 +8,6 @@ const Searchbar = () => {
   const [inputHomeSearch, setInputHomeSearch] = useState(false)
   const [error, setError] = useState("");
 
-  const onclick = (e) => {
-
-  }
 
   const validateSearch = (e) => {
     console.log(e.target.value)
