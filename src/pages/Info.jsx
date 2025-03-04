@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Info = () => {
   return (
     <StyledWrapper>
-      <div className="container mt-5">
+      <div className="container pt-5">
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8">
             <h1 className="title">Chi Siamo</h1>

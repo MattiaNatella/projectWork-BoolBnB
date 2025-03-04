@@ -61,13 +61,12 @@ const StyledWrapper = styled.div`
   }
 
   .faq-item {
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 
   .question {
     font-size: 1.5rem;
     color: #5b2333;
-    margin-bottom: 0.5rem;
   }
 
   .answer {

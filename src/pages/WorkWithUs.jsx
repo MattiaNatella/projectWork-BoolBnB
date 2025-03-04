@@ -4,7 +4,7 @@ import Button from "../partials/Button";
 const WorkWithUs = () => {
   return (
     <StyledWrapper>
-      <div className="container my-5">
+      <div className="container py-5">
         <h1 className="title">Lavora con noi</h1>
         <p className="description">
           Siamo sempre alla ricerca di persone talentuose e appassionate per

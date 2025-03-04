@@ -6,7 +6,7 @@ import Button from "../partials/Button";
 const Contacts = () => {
   return (
     <StyledWrapper>
-      <div className="container my-5">
+      <div className="container py-5">
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8">
             <h1 className="title">Contattaci</h1>
