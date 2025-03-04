@@ -16,6 +16,15 @@ main {
 .csm-image {
   width: 100%;
   aspect-ratio: 16/11;
+
+  
+}
+
+.csm-content {
+  border: 0.4px solid black;
+  border-left: 0px;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .bg-white-smoke {
@@ -89,4 +98,35 @@ footer {
 
 .img-immobile {
   object-fit: fill;
+  width: 50%;
+  border: 0.4px solid black;
+  border-right: 0px;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+
+}
+
+@media (max-width: 991px) {
+  .container-top {
+    flex-direction: column;
+  }
+
+  .img-immobile {
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 0;
+    border: 0.4px solid black;
+    border-bottom: 0px;
+  }
+
+  .csm-content {
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-top-right-radius: 0;
+    border: 0.4px solid black;
+    border-top: 0px;
+
+
+  }
 }
