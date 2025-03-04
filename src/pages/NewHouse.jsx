@@ -267,7 +267,7 @@ const NewHouse = () => {
                 <UploadFile handleSetValue={handleSetValue} />
               </div>
             </div>
-            <div className="mt-5">
+            <div className="mt-5 text-center">
                <label htmlFor="note" className="mb-3 label-text">Descrizione dell'immobile</label>
                <textarea
                   className="form-control input w-100"
