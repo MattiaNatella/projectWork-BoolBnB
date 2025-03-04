@@ -38,7 +38,7 @@ const StyledWrapper = styled.div`
     /* color used to softly clip top and bottom of the .words container */
     background-color: var(--bg-color);
     padding: 1rem 2rem;
-    --bs-card-border-color: var(--bg-color);
+    --bs-card-border-color: var(--bg-color);   
   }
   .loader {
     color: rgb(124, 124, 124);
@@ -51,8 +51,16 @@ const StyledWrapper = styled.div`
     padding: 10px 10px;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-
+    display: flex;    
+  @media screen and (max-width: 768px){
+      font-size: 1.7rem;      
+      width:100%;
+      margin-left: 70px;         
+      }
+  @media screen and (max-width: 426px){
+      font-size: 1.32rem;
+      margin-left: 30px;
+      } 
   }
 
   .words {
