@@ -58,9 +58,9 @@ const DetailButton = ({ immobile }) => {
                         <span style={{ '--i': 13 }}>&nbsp;</span>
                         <span style={{ '--i': 14 }}>M</span>
                         <span style={{ '--i': 15 }}>a</span>
-                        <span style={{ '--i': 15 }}>i</span>
-                        <span style={{ '--i': 15 }}>l</span>
-                        <span style={{ '--i': 15 }}>!</span>
+                        <span style={{ '--i': 16 }}>i</span>
+                        <span style={{ '--i': 17 }}>l</span>
+                        <span style={{ '--i': 18 }}>!</span>
                     </p>
                 </div>
             </a>
