@@ -103,7 +103,7 @@ const NewHouse = () => {
       <div className="container">
         <form action="#">
           <div className="pt-5 pb-3 col-12">
-            <h4 className="mb-4">Inserisci i tuoi dati</h4>
+            <h4 className="mb-4 text-uppercase text-wine fw-bold">Inserisci i tuoi dati</h4>
             <div className="d-flex justify-content-around mb-3">
               <label htmlFor="nome" className="label-text">Nome</label>
               <label htmlFor="cognome" className="ps-5 label-text">
@@ -151,7 +151,7 @@ const NewHouse = () => {
           </div>
 
           <div className="pt-5 pb-3">
-            <h4 className="mb-4">Inserisci i dati dell'annuncio</h4>
+            <h4 className="mb-4 text-uppercase text-wine fw-bold ">Inserisci i dati dell'annuncio</h4>
             <div className="d-flex justify-content-around mb-3">
               <label htmlFor="descrizione_immobile" className="pe-5 me-5 label-text">
                 Nome dell'annuncio
@@ -316,6 +316,7 @@ const StyledWrapper = styled.div`
 
   .label-text{
   font-weight: bold;
+  color: #5b2333;
   }
   @media screen and (max-width: 575px){
   .tipologia{

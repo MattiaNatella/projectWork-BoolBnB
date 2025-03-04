@@ -31,7 +31,7 @@ const Detail = () => {
           />
           <div className="p-3 csm-content csm-content">
             <div className="d-sm-block d-lg-flex justify-content-between mb-3">
-              <h3>{immobile?.descrizione_immobile}</h3>
+              <h3 className="fw-bold text-wine text-uppercase">{immobile?.descrizione_immobile}</h3>
               <span className="fs-4">
                 <Rating
                   valutazione={immobile?.media_valutazione}
@@ -39,28 +39,28 @@ const Detail = () => {
                 />
               </span>
             </div>
-            <p className="fw-bolder fs-5">€ {immobile?.prezzo_notte} / notte</p>
+            <p className="fw-bolder fs-5 text-wine">€ {immobile?.prezzo_notte} / notte</p>
             <div className="details fs-5 fw-light ">
               <p> {immobile?.testo_descrittivo}</p>
               <p>
-                <strong className="fw-bold pe-2">Metri Quadrati:</strong>{" "}
+                <strong className="fw-bold pe-2 text-wine text-uppercase">Metri Quadrati:</strong>{" "}
                 {immobile?.metri_quadrati} m²
               </p>
               <p>
-                <strong className="fw-bold pe-2">Indirizzo:</strong>{" "}
+                <strong className="fw-bold pe-2 text-wine text-uppercase">Indirizzo:</strong>{" "}
                 {immobile?.indirizzo}
               </p>
               <p>
-                <strong className="fw-bold pe-2">Stanze:</strong>{" "}
+                <strong className="fw-bold pe-2 text-wine text-uppercase">Stanze:</strong>{" "}
                 {immobile?.stanze}
               </p>
               <p>
-                <strong className="fw-bold pe-2">Bagni:</strong>{" "}
+                <strong className="fw-bold pe-2 text-wine text-uppercase">Bagni:</strong>{""}
                 {immobile?.bagni}
               </p>
 
               <div className="d-flex flex-column align-items-end">
-                <span className="pe-1 pb-2 fw-bold ">Contatta il proprietario</span>
+                <span className="pe-1 pb-2 fw-bold text-wine ">Contatta il proprietario</span>
                 <DetailButton immobile={immobile} />
               </div>
 
