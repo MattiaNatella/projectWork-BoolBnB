@@ -7,7 +7,7 @@ const Button = ({ text, error, link, onclick, type, inputHomeSearch }) => {
     <StyledWrapper>
       <Link
         to={error ? "#" : link}
-        className={` btn button ms-2 ${error || !inputHomeSearch ? "disabled" : ""}`}
+        className={` btn button ms-2 ${error || (!inputHomeSearch && text == 'Ricerca') ? "disabled" : ""}`}
         onClick={onclick || ""}
         type={type || ""}
       >
