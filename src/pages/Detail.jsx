@@ -22,13 +22,13 @@ const Detail = () => {
   return (
     <>
       <div className="container py-5">
-        <div className="container-top rounded-5 d-flex">
+        <div className="container-top d-flex">
           <img
             src={immobile?.immagine}
-            className="img-immobile w-50 csm-image rounded-start-5"
+            className="img-immobile csm-image"
             alt="immagine immobile"
           />
-          <div className="p-3 csm-border rounded-end-5">
+          <div className="p-3 csm-content csm-content">
             <div className="d-sm-block d-lg-flex justify-content-between mb-3">
               <h3>{immobile?.descrizione_immobile}</h3>
               <span className="fs-4">
