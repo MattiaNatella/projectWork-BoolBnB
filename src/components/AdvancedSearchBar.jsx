@@ -49,9 +49,9 @@ const AdvancedSearchBar = () => {
     <StyledWrapper>
       <div>
         <form
-          className="d-flex align-items-center justify-content-between align-items-center gap-3 mt-5"
+          className="d-lg-flex align-items-center justify-content-center justify-content-lg-between gap-lg-3 mt-5"
           onSubmit={handleSubmit}>
-          <label htmlFor="tipologia">Tipologia</label>
+          <label htmlFor="tipologia"><strong>Tipologia</strong></label>
           <select
             className="input2 form-select my-2"
             aria-label="Default select example"
@@ -68,8 +68,8 @@ const AdvancedSearchBar = () => {
               ))}
           </select>
 
-          <div className="d-flex align-items-center gap-3">
-            <label htmlFor="stanze">Stanze</label>
+          <div className="d-flex align-items-center justify-content-between gap-3 pb-2 pb-lg-0">
+            <label htmlFor="stanze"><strong>Stanze</strong></label>
             <input
               className="input"
               type="number"
@@ -81,7 +81,7 @@ const AdvancedSearchBar = () => {
               min={1}
               max={10}
             />
-            <label htmlFor="bagni">Bagni</label>
+            <label htmlFor="bagni"><strong>Bagni</strong></label>
             <input
               className="input"
               type="number"
@@ -97,7 +97,7 @@ const AdvancedSearchBar = () => {
 
 
           <div className="d-flex justify-content-center">
-            <button className="button w-100" type="submit">
+            <button className="advanced-button" type="submit">
               Cerca
               <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
                 <path
@@ -154,7 +154,7 @@ width: 70%;
     border-radius: 50px;
   }
 
-  .button {
+  .advanced-button {
     position: relative;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
@@ -173,7 +173,7 @@ width: 70%;
     outline: none;
     overflow: hidden;
     font-size: 15px;
-    width: 20%;
+    width: 100%;
   }
 
   .icon {
@@ -201,6 +201,17 @@ width: 70%;
     left: -100px;
     opacity: 0.6;
   }
+    @media (max-width: 991px){
+    .advanced-button{
+      width: 30%;
+  }
+    }
+
+    @media (max-width: 767px){
+    .advanced-button{
+      width: 40%;
+  }
+    }
 `;
 
 export default AdvancedSearchBar;
