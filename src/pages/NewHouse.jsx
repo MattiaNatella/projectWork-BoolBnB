@@ -18,6 +18,7 @@ const NewHouse = () => {
       telefono: "",
     },
     descrizione_immobile: "",
+    testo_descrittivo:"",
     stanze: "",
     bagni: "",
     letti: "",
@@ -104,8 +105,8 @@ const NewHouse = () => {
           <div className="pt-5 pb-3 col-12">
             <h4 className="mb-4">Inserisci i tuoi dati</h4>
             <div className="d-flex justify-content-around mb-3">
-              <label htmlFor="nome">Nome</label>
-              <label htmlFor="cognome" className="ps-5">
+              <label htmlFor="nome" className="label-text">Nome</label>
+              <label htmlFor="cognome" className="ps-5 label-text">
                 Cognome
               </label>
             </div>
@@ -127,8 +128,8 @@ const NewHouse = () => {
             </div>
           </div>
           <div className="d-flex justify-content-around mt-4 mb-3">
-            <label htmlFor="email">Email</label>
-            <label htmlFor="telefono" className="ps-5">
+            <label htmlFor="email" className="label-text">Email</label>
+            <label htmlFor="telefono" className="ps-5 label-text">
               Telefono
             </label>
           </div>
@@ -152,10 +153,10 @@ const NewHouse = () => {
           <div className="pt-5 pb-3">
             <h4 className="mb-4">Inserisci i dati dell'annuncio</h4>
             <div className="d-flex justify-content-around mb-3">
-              <label htmlFor="descrizione_immobile" className="pe-5 me-5">
+              <label htmlFor="descrizione_immobile" className="pe-5 me-5 label-text">
                 Nome dell'annuncio
               </label>
-              <label htmlFor="indirizzo" className="pe-5">
+              <label htmlFor="indirizzo" className="label-text pe-5">
                 Indirizzo
               </label>
             </div>
@@ -178,7 +179,7 @@ const NewHouse = () => {
 
             <div className="d-flex flex-column flex-sm-row justify-content-md-between mt-5 mb-3 text-center">
               <div>
-                <label htmlFor="stanze" className="mb-3">
+                <label htmlFor="stanze" className="label-text mb-3">
                   Numero di stanze
                 </label>
                 <input
@@ -190,7 +191,7 @@ const NewHouse = () => {
                 />
               </div>
               <div>
-                <label htmlFor="bagni" className="mb-3">
+                <label htmlFor="bagni" className="mb-3 label-text">
                   Numero di bagni
                 </label>
                 <input
@@ -202,7 +203,7 @@ const NewHouse = () => {
                 />
               </div>
               <div>
-                <label htmlFor="letti" className="mb-3">
+                <label htmlFor="letti" className="mb-3 label-text">
                   Numero di letti
                 </label>
                 <input
@@ -214,7 +215,7 @@ const NewHouse = () => {
                 />
               </div>
               <div>
-                <label htmlFor="metri_quadrati" className="mb-3">
+                <label htmlFor="metri_quadrati" className="mb-3 label-text">
                   Metri quadrati
                 </label>
                 <input
@@ -226,8 +227,8 @@ const NewHouse = () => {
                 />
               </div>
               <div>
-                <label htmlFor="prezzo" className="mb-3">
-                  Prezzo
+                <label htmlFor="prezzo" className="mb-3 label-text">
+                  Prezzo per notte
                 </label>
                 <input
                   type="number"
@@ -241,7 +242,7 @@ const NewHouse = () => {
 
             <div className="d-flex flex-column flex-sm-row justify-content-md-between mt-5 gap-sm-4 text-center">
               <div className="col-sm-6">
-                <label htmlFor="tipologia" className="mb-3">
+                <label htmlFor="tipologia" className="mb-3 label-text">
                   Tipologia
                 </label>
                 <select
@@ -260,12 +261,23 @@ const NewHouse = () => {
                 </select>
               </div>
               <div className="col-sm-6">
-                <label htmlFor="immagine" className="mb-3">
+                <label htmlFor="immagine" className="mb-3 label-text">
                   Immagine
                 </label>
                 <UploadFile handleSetValue={handleSetValue} />
               </div>
             </div>
+            <div className="mt-5">
+               <label htmlFor="note" className="mb-3 label-text">Descrizione dell'immobile</label>
+               <textarea
+                  className="form-control input w-100"
+                  name="testo_descrittivo"
+                  rows="5"
+                  value={formData.testo_descrittivo}
+                  onChange={handleSetValue}
+                />
+            </div>
+
 
             <h5 className="text-center text-wine mt-4">{error}</h5>
             <div className="d-flex justify-content-center my-5">
@@ -300,6 +312,10 @@ const StyledWrapper = styled.div`
   }
   .tipologia{
   width: 96.5%;
+  }
+
+  .label-text{
+  font-weight: bold;
   }
   @media screen and (max-width: 575px){
   .tipologia{
