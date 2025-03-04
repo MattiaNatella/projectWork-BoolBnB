@@ -58,7 +58,9 @@ const Detail = () => {
                 <strong className="fw-bold pe-2">Bagni:</strong>{" "}
                 {immobile?.bagni}
               </p>
-              <div className="d-flex justify-content-end">
+
+              <div className="d-flex flex-column align-items-end">
+                <span className="pe-1 pb-2 fw-bold ">Contatta il proprietario</span>
                 <DetailButton immobile={immobile} />
               </div>
 
