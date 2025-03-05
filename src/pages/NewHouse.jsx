@@ -31,6 +31,7 @@ const NewHouse = () => {
 
   const [formData, setFormData] = useState(initialData);
   const [error, setError] = useState("");
+  
 
   const validate = () => {
     if (
@@ -242,7 +243,7 @@ const NewHouse = () => {
                 <i className="pt-3 fa-solid fa-house-chimney text-wine house-icon"></i>
               </div>
               <div>
-                <label htmlFor="prezzo" className="mb-3 label-text">
+                <label htmlFor="prezzo_notte" className="mb-3 label-text">
                   Prezzo per notte
                 </label>
                 <input
