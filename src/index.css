@@ -98,6 +98,10 @@ Link {
     font-size: 15px;
 }
 
+.house-icon{
+  font-size: 5rem;
+}
+
 .loader {
   margin-left: 150px;
 }
