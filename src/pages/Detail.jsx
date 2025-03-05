@@ -13,10 +13,12 @@ const Detail = () => {
 
   const checkReviews = () => {
     if (immobile?.reviews[0].id == null) {
-      return <p>Non ci sono recensioni per questo immobile</p>;
+      return <p className="text-wine fw-bold fs-3 text-center">Non ci sono recensioni per questo immobile</p>;
     }
     return immobile?.reviews.map((review) => (
-      <NewReviewCard key={review.id} review={review} />
+      <div className="d-flex col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 justify-content-center" key={review.id}>
+        <NewReviewCard  review={review} />
+      </div>
     ));
   };
 
@@ -78,7 +80,7 @@ const Detail = () => {
             </span>{" "}
           </h3>
           <div className="recensioni justify-content-center pt-5">
-            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+            <div className="row flex-wrap">
               {checkReviews()}
             </div>
           </div>
