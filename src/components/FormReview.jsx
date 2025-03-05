@@ -59,7 +59,7 @@ const FormReview = ({ handleClose, immobile }) => {
   return (
     <div className="container">
       <form action="#" onSubmit={handleSubmit}>
-        <div className="mt-3 mb-3">
+        <div className="mt-3 mb-3 text-wine">
           <label htmlFor="username">Nome e Cognome</label>
           <input
             type="text"
@@ -70,7 +70,7 @@ const FormReview = ({ handleClose, immobile }) => {
             onChange={handleSetValue}
           />
         </div>
-        <div className="my-3">
+        <div className="my-3 text-wine">
           <label htmlFor="valutazione">Voto</label>
           <input
             type="number"
@@ -83,7 +83,7 @@ const FormReview = ({ handleClose, immobile }) => {
             onChange={handleSetValue}
           />
         </div>        
-        <div className="my-3">
+        <div className="my-3 text-wine">
           <label htmlFor="gg_permanenza">Giorni di permanenza</label>
           <input
             type="number"
@@ -95,7 +95,7 @@ const FormReview = ({ handleClose, immobile }) => {
           />
         </div>
         <div>
-          <label htmlFor="testo">Raccontaci la tua esperienza</label>
+          <label htmlFor="testo" className="text-wine">Raccontaci la tua esperienza</label>
           <textarea 
           type="text"
           className="form-control"
@@ -109,7 +109,7 @@ const FormReview = ({ handleClose, immobile }) => {
         {errorMsg && <div className="text-danger mt-2">{errorMsg}</div>}
         <button
           type="submit"
-          className="btn btn-lg w-50 btn-primary my-3"          
+          className="btn btn-lg button-modal w-50 my-3"          
         >
           Invia
         </button>

@@ -114,6 +114,7 @@ const NewHouse = () => {
             <div className="d-flex gap-5 justify-content-between col-12">
               <input
                 type="text"
+                placeholder="Inserisci nome"
                 className="form-control input w-50"
                 name="nome"
                 value={formData.proprietario.nome}
@@ -122,6 +123,7 @@ const NewHouse = () => {
               <input
                 type="text"
                 className="form-control input w-50 "
+                placeholder="Inserisci cognome"
                 name="cognome"
                 value={formData.proprietario.cognome}
                 onChange={handleSetValue}
@@ -137,6 +139,7 @@ const NewHouse = () => {
           <div className="d-flex gap-5 justify-content-between">
             <input
               type="email"
+              placeholder="Inserisci email"
               className="form-control input w-50"
               name="email"
               value={formData.proprietario.email}
@@ -144,6 +147,7 @@ const NewHouse = () => {
             />
             <input
               type="tel"
+              placeholder="Inserisci telefono"
               className="form-control input w-50"
               name="telefono"
               value={formData.proprietario.telefono}
@@ -164,6 +168,7 @@ const NewHouse = () => {
             <div className="d-flex justify-content-around gap-5">
               <input
                 type="text"
+                placeholder="Inserisci annuncio"
                 className="form-control input w-50"
                 name="descrizione_immobile"
                 value={formData.descrizione_immobile}
@@ -172,49 +177,54 @@ const NewHouse = () => {
               <input
                 type="text"
                 className="form-control input w-50"
+                placeholder="Inserisci indirizzo"
                 name="indirizzo"
                 value={formData.indirizzo}
                 onChange={handleSetValue}
               />
             </div>
 
-            <div className="d-flex flex-column flex-sm-row justify-content-md-between mt-5 mb-3 text-center">
-              <div>
+            <div className="row row-cols-sm-3  d-flex flex-column flex-sm-row justify-content-md-between mt-5 mb-3 text-center">
+              <div className="mb-4">
                 <label htmlFor="stanze" className="label-text mb-3">
                   Numero di stanze
                 </label>
                 <input
                   type="number"
                   className="form-control input"
+                  placeholder="Numero stanze"
                   name="stanze"
                   value={formData.stanze}
                   onChange={handleSetValue}
                 />
               </div>
-              <div>
+              <div className="mb-4">
                 <label htmlFor="bagni" className="mb-3 label-text">
                   Numero di bagni
                 </label>
                 <input
                   type="number"
                   className="form-control input"
+                  placeholder="Numero bagni"
                   name="bagni"
                   value={formData.bagni}
                   onChange={handleSetValue}
                 />
               </div>
-              <div>
+              <div className="mb-4">
                 <label htmlFor="letti" className="mb-3 label-text">
                   Numero di letti
                 </label>
                 <input
                   type="number"
                   className="form-control input"
+                  placeholder="Numero letti"
                   name="letti"
                   value={formData.letti}
                   onChange={handleSetValue}
                 />
               </div>
+
               <div>
                 <label htmlFor="metri_quadrati" className="mb-3 label-text">
                   Metri quadrati
@@ -222,10 +232,14 @@ const NewHouse = () => {
                 <input
                   type="number"
                   className="form-control input"
+                  placeholder="Metri quadrati"
                   name="metri_quadrati"
                   value={formData.metri_quadrati}
                   onChange={handleSetValue}
                 />
+              </div>
+              <div className="pt-5 d-none d-sm-block">
+                <i className="pt-3 fa-solid fa-house-chimney text-wine house-icon"></i>
               </div>
               <div>
                 <label htmlFor="prezzo" className="mb-3 label-text">
@@ -233,6 +247,7 @@ const NewHouse = () => {
                 </label>
                 <input
                   type="number"
+                  placeholder="Prezzo"
                   className="form-control input"
                   name="prezzo"
                   value={formData.prezzo_notte}
@@ -253,7 +268,7 @@ const NewHouse = () => {
                   name="tipologia"
                   value={formData.tipologia}
                 >
-                  <option value=""></option>
+                  <option value="">Seleziona tipologia</option>
                   {tipologie?.map((tipologia) => (
                     <option key={tipologia?.id} value={parseInt(tipologia?.id)}>
                       {tipologia?.descrizione}
@@ -273,6 +288,7 @@ const NewHouse = () => {
               <textarea
                 className="form-control input w-100"
                 name="testo_descrittivo"
+                placeholder="Inserisci descrizione"
                 rows="5"
                 value={formData.testo_descrittivo}
                 onChange={handleSetValue}
