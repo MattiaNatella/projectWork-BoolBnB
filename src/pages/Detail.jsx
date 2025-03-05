@@ -12,13 +12,16 @@ const Detail = () => {
   useEffect(() => fetchImmobile(id), []);
 
   const checkReviews = () => {
-    if (immobile?.recensioni === null) {
+    if (immobile?.reviews[0].id == null) {
       return <p>Non ci sono recensioni per questo immobile</p>;
     }
     return immobile?.reviews.map((review) => (
       <NewReviewCard key={review.id} review={review} />
     ));
   };
+
+  console.log(immobile?.reviews );
+  
 
   return (
     <>
