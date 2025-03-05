@@ -3,16 +3,9 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const AdvancedSearchBar = () => {
-  const { handleAdvancedSearch, tipologie, fetchTipologie } =
+  const { handleAdvancedSearch, tipologie, fetchTipologie, filters, setFilters } =
     useGlobalContext();
 
-  const resetSearch = {
-    stanze: "",
-    bagni: "",
-    tipologia: 0,
-  };
-
-  const [filters, setFilters] = useState(resetSearch);
   const [error, setError] = useState("");
 
   const validate = () => {

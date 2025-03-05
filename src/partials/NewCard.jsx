@@ -3,7 +3,7 @@ import CardButton from "./CardButton";
 import Hearts from "../components/Hearts";
 import { useState } from "react";
 
-const NewCard = ({ immobile }) => {
+const NewCard = ({ immobile, stanze, bagni }) => {
   const [cuoricini, setCuoricini] = useState(immobile.voto);
 
   return (
@@ -18,15 +18,24 @@ const NewCard = ({ immobile }) => {
           <span className="desctag border rounded bg-light p-1 text-wine fw-bold">
             {immobile.descrizione_immobile}
           </span>
+
           <i className="fa-solid fa-heart text-danger p-1 border rounded bg-light rounded-">
             &nbsp; &nbsp;{cuoricini}
           </i>
         </div>
-        <div className="cardoverlay-bottom py-3 px-2 ">
+
+        <div className="cardoverlay-bottom w-100 d-flex justify-content-between py-3 px-2 ">
           <span className="border rounded bg-light  text-wine fw-bold p-1 px-2">
             {immobile.indirizzo}
           </span>
         </div>
+
+        {(stanze || bagni) && (
+          <div className="stanze-bagni py-3 px-2 d-flex flex-column">
+            {stanze && (<span className="border rounded bg-light  text-wine fw-bold p-1 px-2"> Stanze: {immobile.stanze} </span>)}
+            {bagni && (<span className="border rounded bg-light  text-wine fw-bold p-1 px-2"> Bagni: {immobile.bagni} </span>)}
+          </div>
+        )}
 
         <div className="card__content">
           <p className="card__title">{immobile.descrizione_immobile}</p>

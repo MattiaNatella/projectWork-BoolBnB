@@ -15,6 +15,16 @@ const GlobalProvider = ({ children }) => {
   const [advancedFilter, setAdvancedFilter] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
 
+
+  const resetSearch = {
+    stanze: "",
+    bagni: "",
+    tipologia: 0,
+  };
+
+  const [filters, setFilters] = useState(resetSearch);
+
+
   const fetchImmobili = () => {
     axios
       .get(api_url)
@@ -89,7 +99,9 @@ const GlobalProvider = ({ children }) => {
     tipologie,
     api_url,
     fetchTipologie,
-    advancedFilter
+    advancedFilter,
+    filters,
+    setFilters
   };
 
   return (

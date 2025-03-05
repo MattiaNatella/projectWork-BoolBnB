@@ -4,7 +4,7 @@ import AdvancedSearchBar from "../components/AdvancedSearchBar";
 import NewCard from "../partials/NewCard";
 
 const AdvancedSearch = () => {
-  const { searchTerm, filteredImmobili, fetchFilteredImmobili, advancedFilter } =
+  const { searchTerm, filteredImmobili, fetchFilteredImmobili, advancedFilter, filters } =
     useGlobalContext();
 
   const capitalizeFirstLetter = (string) => {
@@ -23,7 +23,7 @@ const AdvancedSearch = () => {
 
     if (advancedFilter.length > 0) {
       return advancedFilter?.map((immobile) => (
-        <NewCard immobile={immobile} key={immobile.id} />))
+        <NewCard immobile={immobile} key={immobile.id} stanze={filters?.stanze} bagni={filters?.bagni} />))
     }
   }
 
