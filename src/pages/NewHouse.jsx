@@ -197,6 +197,7 @@ const NewHouse = () => {
                   name="stanze"
                   value={formData.stanze}
                   onChange={handleSetValue}
+                  min={1}
                 />
               </div>
               <div className="mb-4">
@@ -210,6 +211,7 @@ const NewHouse = () => {
                   name="bagni"
                   value={formData.bagni}
                   onChange={handleSetValue}
+                  min={1}
                 />
               </div>
               <div className="mb-4">
@@ -223,6 +225,7 @@ const NewHouse = () => {
                   name="letti"
                   value={formData.letti}
                   onChange={handleSetValue}
+                  min={1}
                 />
               </div>
 
@@ -237,6 +240,7 @@ const NewHouse = () => {
                   name="metri_quadrati"
                   value={formData.metri_quadrati}
                   onChange={handleSetValue}
+                  min={1}
                 />
               </div>
               <div className="pt-5 d-none d-sm-block">
@@ -253,6 +257,7 @@ const NewHouse = () => {
                   name="prezzo_notte"
                   value={formData.prezzo_notte}
                   onChange={handleSetValue}
+                  min={1}
                 />
               </div>
             </div>
