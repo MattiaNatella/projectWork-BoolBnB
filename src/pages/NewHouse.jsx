@@ -249,7 +249,7 @@ const NewHouse = () => {
                   type="number"
                   placeholder="Prezzo"
                   className="form-control input"
-                  name="prezzo"
+                  name="prezzo_notte"
                   value={formData.prezzo_notte}
                   onChange={handleSetValue}
                 />
