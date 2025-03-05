@@ -23,8 +23,8 @@ const ModalReview = ({ immobile }) => {
         >
           <div className="modal-dialog-centered modal-dialog">
             <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="fw-semibold my-auto">
+              <div className="modal-header bg-wine">
+                <h5 className="fw-semibold text-white-smoke my-auto">
                   {" "}
                   Aggiungi la nuova recensione
                 </h5>
@@ -36,7 +36,7 @@ const ModalReview = ({ immobile }) => {
                   aria-label="Close"
                 ></button>
               </div>
-              <div className="modal-body">
+              <div className="modal-body bg-white-smoke">
                 {" "}
                 <FormReview handleClose={handleClose} immobile={immobile} />
               </div>
