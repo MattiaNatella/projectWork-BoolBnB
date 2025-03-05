@@ -7,9 +7,9 @@ const AdvancedSearch = () => {
   const { searchTerm, filteredImmobili, fetchFilteredImmobili, advancedFilter } =
     useGlobalContext();
 
-    const capitalizeFirstLetter = (string) => {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-    };  
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
 
   const showFilter = (advancedFilter, filteredImmobili) => {
     if (advancedFilter == null) {
@@ -39,7 +39,7 @@ const AdvancedSearch = () => {
         <AdvancedSearchBar />
       </div>
       <h2 className="mb-5 text-wine">Ecco i risultati di ricerca per {capitalizeFirstLetter(searchTerm)}</h2>
-      <div className="row row-cols-lg-3 mb-5">
+      <div className="row row-cols-lg-3 pb-5">
         {showFilter(advancedFilter, filteredImmobili)}
       </div>
     </div>

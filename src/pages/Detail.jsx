@@ -74,7 +74,7 @@ const Detail = () => {
               <ModalReview immobile={immobile} />
             </span>{" "}
           </h3>
-          <div className="recensioni justify-content-center mt-5">
+          <div className="recensioni justify-content-center pt-5">
             <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
               {checkReviews()}
             </div>
