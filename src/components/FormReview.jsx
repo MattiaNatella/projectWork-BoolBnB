@@ -23,7 +23,7 @@ const FormReview = ({ handleClose, immobile }) => {
   const validateReview = () =>{
     if (!formReview.username || !formReview.testo) return false
     if(isNaN(formReview.valutazione) || formReview.valutazione < 1 || formReview.valutazione > 5) return false
-    if (isNaN(formReview.gg_permanenza) || formReview.gg_permanenza < 1) return false;
+    if (isNaN(formReview.gg_permanenza) || formReview.gg_permanenza < 1) return false;    
     return true
   }
 
@@ -100,9 +100,11 @@ const FormReview = ({ handleClose, immobile }) => {
           type="text"
           className="form-control"
           name="testo"
-          placeholder="Raccontaci la tua esperienza"
+          placeholder="Raccontaci in breve la tua esperienza(max 100 caratteri)"
           value={formReview.testo}
-          onChange={handleSetValue} />            
+          onChange={handleSetValue} 
+          maxlength="100" minlength="5"
+          />            
         </div>
         {errorMsg && <div className="text-danger mt-2">{errorMsg}</div>}
         <button
