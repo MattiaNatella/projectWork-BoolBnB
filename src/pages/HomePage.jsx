@@ -21,7 +21,7 @@ const HomePage = () => {
         <div className="d-flex justify-content-center">
           <Searchbar />
         </div>
-        <h2 className="mb-4">I più apprezzati</h2>
+        <h2 className="mb-4 fw-bold text-wine text-uppercase">I più apprezzati</h2>
         <div className="row row-cols-lg-2 row-cols-xl-3 pb-5">
           {immobili.slice(0, 3).map((immobile) => (
             <div key={immobile.id}>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Social from "../partials/Social";
 const Footer = () => {
   return (
@@ -7,22 +8,34 @@ const Footer = () => {
           <h5 className="border-bottom">Link Utili</h5>
           <ul className="list-unstyled">
             <li>
-              <a to="/">Home</a>
+              <Link className="footer-link" to="/">
+                Home
+              </Link>
             </li>
             <li>
-              <a to="/chi-siamo">Chi siamo</a>
+              <Link className="footer-link" to="/chi-siamo">
+                Chi siamo
+              </Link>
             </li>
             <li>
-              <a to="/servizi">Servizi</a>
+              <Link className="footer-link" to="/servizi">
+                Servizi
+              </Link>
             </li>
             <li>
-              <a to="/proprieta">Proprietà</a>
+              <Link className="footer-link" to="/faq">
+                FAQ
+              </Link>
             </li>
             <li>
-              <a to="/faq">FAQ</a>
+              <Link className="footer-link" to="/contatti">
+                Contatti
+              </Link>
             </li>
             <li>
-              <a to="/contatti">Contatti</a>
+              <Link className="footer-link" to="/lavora-con-noi">
+                Lavora con noi
+              </Link>
             </li>
           </ul>
         </div>
