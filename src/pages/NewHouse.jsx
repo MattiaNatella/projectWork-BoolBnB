@@ -18,7 +18,7 @@ const NewHouse = () => {
       telefono: "",
     },
     descrizione_immobile: "",
-    testo_descrittivo:"",
+    testo_descrittivo: "",
     stanze: "",
     bagni: "",
     letti: "",
@@ -26,7 +26,7 @@ const NewHouse = () => {
     indirizzo: "",
     immagine: "",
     tipologia: 0,
-    prezzo: "",
+    prezzo_notte: "",
   };
 
   const [formData, setFormData] = useState(initialData);
@@ -47,7 +47,7 @@ const NewHouse = () => {
       !formData.proprietario.cognome ||
       !formData.proprietario.email ||
       !formData.proprietario.telefono ||
-      !formData.prezzo
+      !formData.prezzo_notte
     )
       return false;
     return true;
@@ -89,6 +89,7 @@ const NewHouse = () => {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then((res) => {
+        alert('Immobile inserito con successo')
         console.log(res);
       })
       .catch((err) => console.log(err));
@@ -234,7 +235,7 @@ const NewHouse = () => {
                   type="number"
                   className="form-control input"
                   name="prezzo"
-                  value={formData.prezzo}
+                  value={formData.prezzo_notte}
                   onChange={handleSetValue}
                 />
               </div>
@@ -268,14 +269,14 @@ const NewHouse = () => {
               </div>
             </div>
             <div className="mt-5 text-center">
-               <label htmlFor="note" className="mb-3 label-text">Descrizione dell'immobile</label>
-               <textarea
-                  className="form-control input w-100"
-                  name="testo_descrittivo"
-                  rows="5"
-                  value={formData.testo_descrittivo}
-                  onChange={handleSetValue}
-                />
+              <label htmlFor="note" className="mb-3 label-text">Descrizione dell'immobile</label>
+              <textarea
+                className="form-control input w-100"
+                name="testo_descrittivo"
+                rows="5"
+                value={formData.testo_descrittivo}
+                onChange={handleSetValue}
+              />
             </div>
 
 
