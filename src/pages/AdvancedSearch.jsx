@@ -18,7 +18,7 @@ const AdvancedSearch = () => {
       ))
     }
     if (advancedFilter.length == 0) {
-      return <h2>Immobile non presente</h2>
+      return <h2>Nessun risultato della ricerca</h2>
     }
 
     if (advancedFilter.length > 0) {

@@ -12,7 +12,7 @@ const Detail = () => {
   useEffect(() => fetchImmobile(id), []);
 
   const checkReviews = () => {
-    if (immobile?.recensioni == 0) {
+    if (immobile?.recensioni === null) {
       return <p>Non ci sono recensioni per questo immobile</p>;
     }
     return immobile?.reviews.map((review) => (
@@ -30,9 +30,9 @@ const Detail = () => {
             alt="immagine immobile"
           />
           <div className="p-3 csm-content csm-content">
-            <div className="d-sm-block d-lg-flex justify-content-between mb-3">
+            <div className="d-sm-block pb-3">
               <h3 className="fw-bold text-wine text-uppercase fs-4">{immobile?.descrizione_immobile}</h3>
-              <span className="fs-4">
+              <span className="fs-4 flex-nowrap">
                 <Rating
                   valutazione={immobile?.media_valutazione}
                   colore={"text-warning"}
